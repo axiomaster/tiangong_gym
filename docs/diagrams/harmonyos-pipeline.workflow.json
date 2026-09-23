@@ -47,53 +47,21 @@
           "verifier",
           "final_cue_data"
         ],
-        "note": "真机路径与虚拟 App 路径经 Verifier 校验合格后，统一收敛输出至 05 独立交付模块 cue_data.json。"
+        "note": "真机路径与虚拟 App 路径经 04 行双路对齐校验器校验后，统一收敛汇聚至第 5 行中央 cue_data.json 交付。"
       }
     ]
   },
   "lanes": [
-    {
-      "id": "real_device",
-      "label": "真机数据源"
-    },
-    {
-      "id": "synthesis",
-      "label": "合成流水线"
-    },
-    {
-      "id": "virtual_app",
-      "label": "虚拟运行时"
-    },
-    {
-      "id": "cleaning_eval",
-      "label": "双路清洗与验证"
-    },
-    {
-      "id": "protocol_delivery",
-      "label": "统一协议交付"
-    }
+    { "id": "real_device", "label": "真机数据源" },
+    { "id": "synthesis", "label": "合成流水线" },
+    { "id": "virtual_app", "label": "虚拟运行时" },
+    { "id": "cleaning_eval", "label": "双路清洗与验证" },
+    { "id": "protocol_delivery", "label": "统一协议交付" }
   ],
   "phases": [
-    {
-      "id": "capture",
-      "label": "真机采集与切图",
-      "fromCol": 0,
-      "toCol": 1
-    },
-    {
-      "id": "synthesis_phase",
-      "label": "规格转换与打包运行",
-      "fromCol": 2,
-      "toCol": 3,
-      "variant": "emphasis"
-    },
-    {
-      "id": "runtime_verify",
-      "label": "双路验证与独立交付",
-      "fromCol": 4,
-      "toCol": 5,
-      "variant": "dashed"
-    }
+    { "id": "capture", "label": "真机采集与切图", "fromCol": 0, "toCol": 1 },
+    { "id": "synthesis_phase", "label": "规格转换与打包运行", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "runtime_verify", "label": "双路对齐与验证", "fromCol": 4, "toCol": 4, "variant": "dashed" }
   ],
   "mainPath": [
     "hdc_collector",
@@ -102,9 +70,7 @@
     "spec_converter",
     "packager",
     "runtime_renderer",
-    "gym_cleaner",
-    "verifier",
-    "final_cue_data"
+    "gym_cleaner"
   ],
   "nodes": [
     {
@@ -166,16 +132,6 @@
       "width": 132
     },
     {
-      "id": "verifier",
-      "lane": "virtual_app",
-      "col": 4,
-      "type": "security",
-      "label": "双路对齐校验器",
-      "sublabel": "匹配率≥95% IoU≥0.85",
-      "tag": "质量门禁",
-      "width": 132
-    },
-    {
       "id": "device_cleaner",
       "lane": "cleaning_eval",
       "col": 0,
@@ -188,7 +144,7 @@
     {
       "id": "real_cue",
       "lane": "cleaning_eval",
-      "col": 2,
+      "col": 1,
       "type": "database",
       "label": "真机基准数据",
       "sublabel": "真机 Text/Image 数据",
@@ -206,9 +162,19 @@
       "width": 132
     },
     {
+      "id": "verifier",
+      "lane": "cleaning_eval",
+      "col": 4,
+      "type": "security",
+      "label": "双路对齐校验器",
+      "sublabel": "匹配率≥95% IoU≥0.85",
+      "tag": "质量门禁",
+      "width": 132
+    },
+    {
       "id": "final_cue_data",
       "lane": "protocol_delivery",
-      "col": 5,
+      "col": 2,
       "type": "database",
       "label": "统一 cue_data.json",
       "sublabel": "标准协议数据交付",
@@ -259,18 +225,11 @@
       "variant": "emphasis"
     },
     {
-      "id": "runtime-to-verifier",
-      "from": "runtime_renderer",
-      "to": "verifier",
-      "route": "straight",
-      "label": "渲染比对",
-      "variant": "dashed"
-    },
-    {
       "id": "raw-to-cleaner",
       "from": "raw_inputs",
       "to": "device_cleaner",
       "label": "离线解析",
+      "toSide": "top",
       "variant": "dashed"
     },
     {
@@ -290,7 +249,8 @@
       "id": "gym-to-verifier",
       "from": "gym_cleaner",
       "to": "verifier",
-      "label": "虚拟样本比对",
+      "route": "straight",
+      "label": "虚拟样本",
       "variant": "dashed"
     },
     {
@@ -319,10 +279,10 @@
     },
     {
       "dot": "rose",
-      "title": "双路验证与统一协议交付",
+      "title": "双路清洗验证与中央统一交付",
       "items": [
-        "真机清洗 (Path A) 与虚拟清洗 (Path B) 最终统一汇聚至 05 模块输出 cue_data.json",
-        "Verifier 执行闭环校验：组件匹配率 ≥95%、IoU ≥0.85、文本一致率 ≥98%"
+        "第 4 行双路清洗与验证：真机清洗产物与虚拟清洗产物横向接入双路对齐校验器执行闭环门禁",
+        "通过质量校验（组件匹配率≥95%、IoU≥0.85、文本一致率≥98%），最终双路汇聚于第 5 行中央统一交付 cue_data.json"
       ]
     }
   ]
