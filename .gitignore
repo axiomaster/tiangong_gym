@@ -1,0 +1,12 @@
+reference
+.DS_Store
+out/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+harmonyos-apps/*__v*
+data/
+skills
+*.egg-info/

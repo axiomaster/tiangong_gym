@@ -1,0 +1,12 @@
+{
+  "bundle_name": "com.huawei.hmos.vmall",
+  "page_url": "pages/Splash",
+  "viewport": {
+    "width": 1320.0,
+    "height": 2848.0
+  },
+  "resolution": 3.375,
+  "generated_at": "2026-09-23T05:10:14+00:00",
+  "source": "reference/data/vmall/pageInfo.json",
+  "assets": 12
+}

@@ -1,0 +1,36 @@
+[project]
+name = "harmonyosgym"
+version = "0.1.0"
+description = "HarmonyOS GUI-agent data synthesis pipeline: real-device dumps -> virtual apps -> cue_data.json"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.7",
+    "pillow>=10",
+]
+
+[dependency-groups]
+dev = [
+    "playwright>=1.63.0",
+    "pytest>=8",
+    "ruff>=0.4",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+ignore = [
+    "TRY004", # malformed JSON dumps raise ValueError by design (tests rely on it)
+]

@@ -1,0 +1,329 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "HarmonyOS 虚拟合成与双路清洗流程",
+    "locale": "zh-CN",
+    "output": "docs/diagrams/harmonyos-pipeline.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "full-pipeline",
+        "label": "端到端全景链路",
+        "focus": [
+          "hdc_collector",
+          "raw_inputs",
+          "cropper",
+          "spec_converter",
+          "packager",
+          "runtime_renderer",
+          "gym_cleaner",
+          "device_cleaner",
+          "real_cue",
+          "verifier",
+          "final_cue_data"
+        ],
+        "note": "从真机采集、切图组装到双路 cue_data 对齐校验完整闭环。"
+      },
+      {
+        "id": "synthesis-path",
+        "label": "流水线展开与运行",
+        "focus": [
+          "raw_inputs",
+          "cropper",
+          "spec_converter",
+          "packager",
+          "runtime_renderer"
+        ],
+        "note": "展开展示切图、规格转换、打包及虚拟 App 运行时的详细生成链路。"
+      },
+      {
+        "id": "dual-cleaning-verify",
+        "label": "双路收敛至 05 交付",
+        "focus": [
+          "device_cleaner",
+          "real_cue",
+          "gym_cleaner",
+          "verifier",
+          "final_cue_data"
+        ],
+        "note": "真机路径与虚拟 App 路径经 Verifier 校验合格后，统一收敛输出至 05 独立交付模块 cue_data.json。"
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "real_device",
+      "label": "真机数据源"
+    },
+    {
+      "id": "synthesis",
+      "label": "合成流水线"
+    },
+    {
+      "id": "virtual_app",
+      "label": "虚拟运行时"
+    },
+    {
+      "id": "cleaning_eval",
+      "label": "双路清洗与验证"
+    },
+    {
+      "id": "protocol_delivery",
+      "label": "统一协议交付"
+    }
+  ],
+  "phases": [
+    {
+      "id": "capture",
+      "label": "真机采集与切图",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "synthesis_phase",
+      "label": "规格转换与打包运行",
+      "fromCol": 2,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "runtime_verify",
+      "label": "双路验证与独立交付",
+      "fromCol": 4,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "mainPath": [
+    "hdc_collector",
+    "raw_inputs",
+    "cropper",
+    "spec_converter",
+    "packager",
+    "runtime_renderer",
+    "gym_cleaner",
+    "verifier",
+    "final_cue_data"
+  ],
+  "nodes": [
+    {
+      "id": "hdc_collector",
+      "lane": "real_device",
+      "col": 0,
+      "type": "external",
+      "label": "真机采集 (HDC)",
+      "sublabel": "hidumper + snapshot",
+      "width": 132
+    },
+    {
+      "id": "raw_inputs",
+      "lane": "real_device",
+      "col": 1,
+      "type": "database",
+      "label": "真机原始数据",
+      "sublabel": "pageInfo + 截图",
+      "width": 132
+    },
+    {
+      "id": "cropper",
+      "lane": "synthesis",
+      "col": 1,
+      "type": "backend",
+      "label": "自动切图器",
+      "sublabel": "按 $rect 裁剪图集",
+      "tag": "Cropper",
+      "width": 132
+    },
+    {
+      "id": "spec_converter",
+      "lane": "synthesis",
+      "col": 2,
+      "type": "backend",
+      "label": "规格转换器",
+      "sublabel": "结构与物理坐标转换",
+      "tag": "Converter",
+      "width": 132
+    },
+    {
+      "id": "packager",
+      "lane": "synthesis",
+      "col": 3,
+      "type": "backend",
+      "label": "虚拟 App 打包器",
+      "sublabel": "packager 组装静态 bundle",
+      "tag": "Packager",
+      "width": 132
+    },
+    {
+      "id": "runtime_renderer",
+      "lane": "virtual_app",
+      "col": 3,
+      "type": "frontend",
+      "label": "虚拟 App 运行时",
+      "sublabel": "DOM 绝对定位物理渲染",
+      "tag": "Path B 运行态",
+      "width": 132
+    },
+    {
+      "id": "verifier",
+      "lane": "virtual_app",
+      "col": 4,
+      "type": "security",
+      "label": "双路对齐校验器",
+      "sublabel": "匹配率≥95% IoU≥0.85",
+      "tag": "质量门禁",
+      "width": 132
+    },
+    {
+      "id": "device_cleaner",
+      "lane": "cleaning_eval",
+      "col": 0,
+      "type": "security",
+      "label": "真机数据清洗",
+      "sublabel": "过滤 off-screen 负坐标",
+      "tag": "Path A 清洗",
+      "width": 132
+    },
+    {
+      "id": "real_cue",
+      "lane": "cleaning_eval",
+      "col": 2,
+      "type": "database",
+      "label": "真机基准数据",
+      "sublabel": "真机 Text/Image 数据",
+      "tag": "真机清洗产物",
+      "width": 132
+    },
+    {
+      "id": "gym_cleaner",
+      "lane": "cleaning_eval",
+      "col": 3,
+      "type": "backend",
+      "label": "虚拟 App 清洗器",
+      "sublabel": "Playwright DOM 提取",
+      "tag": "虚拟清洗产物",
+      "width": 132
+    },
+    {
+      "id": "final_cue_data",
+      "lane": "protocol_delivery",
+      "col": 5,
+      "type": "database",
+      "label": "统一 cue_data.json",
+      "sublabel": "标准协议数据交付",
+      "tag": "最终输出",
+      "width": 132
+    }
+  ],
+  "edges": [
+    {
+      "id": "collect-raw",
+      "from": "hdc_collector",
+      "to": "raw_inputs",
+      "variant": "default"
+    },
+    {
+      "id": "raw-to-cropper",
+      "from": "raw_inputs",
+      "to": "cropper",
+      "route": "straight",
+      "variant": "emphasis"
+    },
+    {
+      "id": "cropper-to-spec",
+      "from": "cropper",
+      "to": "spec_converter",
+      "label": "assets 图集",
+      "variant": "default"
+    },
+    {
+      "id": "spec-to-packager",
+      "from": "spec_converter",
+      "to": "packager",
+      "label": "spec.json",
+      "variant": "default"
+    },
+    {
+      "id": "packager-to-runtime",
+      "from": "packager",
+      "to": "runtime_renderer",
+      "route": "straight",
+      "variant": "emphasis"
+    },
+    {
+      "id": "runtime-to-gym",
+      "from": "runtime_renderer",
+      "to": "gym_cleaner",
+      "route": "straight",
+      "variant": "emphasis"
+    },
+    {
+      "id": "runtime-to-verifier",
+      "from": "runtime_renderer",
+      "to": "verifier",
+      "route": "straight",
+      "label": "渲染比对",
+      "variant": "dashed"
+    },
+    {
+      "id": "raw-to-cleaner",
+      "from": "raw_inputs",
+      "to": "device_cleaner",
+      "label": "离线解析",
+      "variant": "dashed"
+    },
+    {
+      "id": "cleaner-to-real-cue",
+      "from": "device_cleaner",
+      "to": "real_cue",
+      "variant": "default"
+    },
+    {
+      "id": "real-cue-to-verifier",
+      "from": "real_cue",
+      "to": "verifier",
+      "label": "真机基准",
+      "variant": "emphasis"
+    },
+    {
+      "id": "gym-to-verifier",
+      "from": "gym_cleaner",
+      "to": "verifier",
+      "label": "虚拟样本比对",
+      "variant": "dashed"
+    },
+    {
+      "id": "verifier-to-final",
+      "from": "verifier",
+      "to": "final_cue_data",
+      "label": "门禁通过交付",
+      "variant": "security"
+    },
+    {
+      "id": "real-to-final",
+      "from": "real_cue",
+      "to": "final_cue_data",
+      "label": "真机路径交付",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "流水线核心与高保真运行",
+      "items": [
+        "Auto-Cropper 按真实坐标精确裁剪图集并剔除包含框，Spec Converter 转换物理规格",
+        "Packager 打包完整自包含 bundle，Runtime Renderer 纯前端物理像素 1:1 绝对定位还原"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "双路验证与统一协议交付",
+      "items": [
+        "真机清洗 (Path A) 与虚拟清洗 (Path B) 最终统一汇聚至 05 模块输出 cue_data.json",
+        "Verifier 执行闭环校验：组件匹配率 ≥95%、IoU ≥0.85、文本一致率 ≥98%"
+      ]
+    }
+  ]
+}

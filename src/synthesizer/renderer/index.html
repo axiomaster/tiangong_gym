@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HarmonyOSGym Virtual App</title>
+    <link rel="stylesheet" href="renderer.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="renderer.js"></script>
+    <script>
+      // Default entry: load spec.json next to this file. Override with ?spec=path.json
+      (function () {
+        var params = new URLSearchParams(location.search);
+        var specUrl = params.get("spec") || "spec.json";
+        fetch(specUrl)
+          .then(function (r) {
+            if (!r.ok) throw new Error("spec.json HTTP " + r.status);
+            return r.json();
+          })
+          .then(function (spec) {
+            renderSpec(spec, document.getElementById("app"));
+          })
+          .catch(function (err) {
+            window.__SPEC_ERROR__ = String(err);
+            console.error("[harmonyosgym] spec load failed:", err);
+          });
+      })();
+    </script>
+  </body>
+</html>
