@@ -1,0 +1,290 @@
+AGENTS.md
+  h_de08bd40967a17 9-10,53,67-71
+harmonyos-apps/com.baidu.netdisk.hmos/app.json
+  h_de08bd40967a17 1-12
+harmonyos-apps/com.baidu.netdisk.hmos/index.html
+  h_de08bd40967a17 1-32
+harmonyos-apps/com.baidu.netdisk.hmos/renderer.css
+  h_de08bd40967a17 1-33
+harmonyos-apps/com.baidu.netdisk.hmos/renderer.js
+  h_de08bd40967a17 1-142
+harmonyos-apps/com.baidu.netdisk.hmos/spec.json
+  h_de08bd40967a17 1-3411
+harmonyos-apps/com.sankuai.hmeituan/app.json
+  h_de08bd40967a17 1-12
+harmonyos-apps/com.sankuai.hmeituan/index.html
+  h_de08bd40967a17 1-32
+harmonyos-apps/com.sankuai.hmeituan/renderer.css
+  h_de08bd40967a17 1-33
+harmonyos-apps/com.sankuai.hmeituan/renderer.js
+  h_de08bd40967a17 1-142
+harmonyos-apps/com.sankuai.hmeituan/spec.json
+  h_de08bd40967a17 1-9704
+harmonyos-apps/com.tencent.mtthm/app.json
+  h_de08bd40967a17 1-12
+harmonyos-apps/com.tencent.mtthm/index.html
+  h_de08bd40967a17 1-32
+harmonyos-apps/com.tencent.mtthm/renderer.css
+  h_de08bd40967a17 1-33
+harmonyos-apps/com.tencent.mtthm/renderer.js
+  h_de08bd40967a17 1-142
+harmonyos-apps/com.tencent.mtthm/spec.json
+  h_de08bd40967a17 1-1546
+harmonyos-apps/com.xunmeng.pinduoduo.hos/app.json
+  h_de08bd40967a17 1-12
+harmonyos-apps/com.xunmeng.pinduoduo.hos/index.html
+  h_de08bd40967a17 1-32
+harmonyos-apps/com.xunmeng.pinduoduo.hos/renderer.css
+  h_de08bd40967a17 1-33
+harmonyos-apps/com.xunmeng.pinduoduo.hos/renderer.js
+  h_de08bd40967a17 1-142
+harmonyos-apps/com.xunmeng.pinduoduo.hos/spec.json
+  h_de08bd40967a17 1-5946
+harmonyos-apps/index.html
+  h_de08bd40967a17 164-171,186-189,261-328,332-333
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/BaiduNetdiskApp.tsx
+  h_de08bd40967a17 1-102
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/components/BaiduNetdiskNavigationHandler.tsx
+  h_de08bd40967a17 1-33
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/components/TabBar.tsx
+  h_de08bd40967a17 1-123
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/data/defaults.json
+  h_de08bd40967a17 1-166
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/data/index.ts
+  h_de08bd40967a17 1-82
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/hooks/useBaiduNetdiskGestures.ts
+  h_de08bd40967a17 1-49
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/hooks/useBaiduNetdiskStrings.ts
+  h_de08bd40967a17 1-9
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/images.d.ts
+  h_de08bd40967a17 1-24
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/manifest.ts
+  h_de08bd40967a17 1-30
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/navigation.declaration.ts
+  h_de08bd40967a17 1-342
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/navigation.ts
+  h_de08bd40967a17 1-244
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/navigation.types.ts
+  h_de08bd40967a17 1-324
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/FileDetailPage.tsx
+  h_de08bd40967a17 1-160
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/FilesPage.tsx
+  h_de08bd40967a17 1-133
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/HomePage.tsx
+  h_de08bd40967a17 1-342
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/KukuAiPage.tsx
+  h_de08bd40967a17 1-121
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/MePage.tsx
+  h_de08bd40967a17 1-141
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/SearchPage.tsx
+  h_de08bd40967a17 1-160
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/pages/SharePage.tsx
+  h_de08bd40967a17 1-89
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/anim.ts
+  h_de08bd40967a17 1-10
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/colors.states.ts
+  h_de08bd40967a17 1-2
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/colors.ts
+  h_de08bd40967a17 1-12
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/dimens.ts
+  h_de08bd40967a17 1-6
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/icons.tsx
+  h_de08bd40967a17 1-55
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/strings.en.ts
+  h_de08bd40967a17 1-55
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/res/strings.ts
+  h_de08bd40967a17 1-53
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/state.ts
+  h_de08bd40967a17 1-152
+harmonyos-apps/mobilegym/apps/BaiduNetdisk/types.ts
+  h_de08bd40967a17 1-50
+harmonyos-apps/mobilegym/apps/Meituan/MeituanApp.tsx
+  h_de08bd40967a17 1-102
+harmonyos-apps/mobilegym/apps/Meituan/components/MeituanNavigationHandler.tsx
+  h_de08bd40967a17 1-33
+harmonyos-apps/mobilegym/apps/Meituan/components/TabBar.tsx
+  h_de08bd40967a17 1-100
+harmonyos-apps/mobilegym/apps/Meituan/data/defaults.json
+  h_de08bd40967a17 1-216
+harmonyos-apps/mobilegym/apps/Meituan/data/index.ts
+  h_de08bd40967a17 1-102
+harmonyos-apps/mobilegym/apps/Meituan/hooks/useMeituanGestures.ts
+  h_de08bd40967a17 1-49
+harmonyos-apps/mobilegym/apps/Meituan/hooks/useMeituanStrings.ts
+  h_de08bd40967a17 1-9
+harmonyos-apps/mobilegym/apps/Meituan/images.d.ts
+  h_de08bd40967a17 1-24
+harmonyos-apps/mobilegym/apps/Meituan/manifest.ts
+  h_de08bd40967a17 1-30
+harmonyos-apps/mobilegym/apps/Meituan/navigation.declaration.ts
+  h_de08bd40967a17 1-337
+harmonyos-apps/mobilegym/apps/Meituan/navigation.ts
+  h_de08bd40967a17 1-244
+harmonyos-apps/mobilegym/apps/Meituan/navigation.types.ts
+  h_de08bd40967a17 1-163
+harmonyos-apps/mobilegym/apps/Meituan/pages/CartPage.tsx
+  h_de08bd40967a17 1-200
+harmonyos-apps/mobilegym/apps/Meituan/pages/DealDetailPage.tsx
+  h_de08bd40967a17 1-197
+harmonyos-apps/mobilegym/apps/Meituan/pages/HomePage.tsx
+  h_de08bd40967a17 1-428
+harmonyos-apps/mobilegym/apps/Meituan/pages/MePage.tsx
+  h_de08bd40967a17 1-150
+harmonyos-apps/mobilegym/apps/Meituan/pages/SearchPage.tsx
+  h_de08bd40967a17 1-166
+harmonyos-apps/mobilegym/apps/Meituan/pages/VideoPage.tsx
+  h_de08bd40967a17 1-115
+harmonyos-apps/mobilegym/apps/Meituan/pages/XiaotuanPage.tsx
+  h_de08bd40967a17 1-124
+harmonyos-apps/mobilegym/apps/Meituan/res/anim.ts
+  h_de08bd40967a17 1-10
+harmonyos-apps/mobilegym/apps/Meituan/res/colors.states.ts
+  h_de08bd40967a17 1-2
+harmonyos-apps/mobilegym/apps/Meituan/res/colors.ts
+  h_de08bd40967a17 1-15
+harmonyos-apps/mobilegym/apps/Meituan/res/dimens.ts
+  h_de08bd40967a17 1-6
+harmonyos-apps/mobilegym/apps/Meituan/res/icons.tsx
+  h_de08bd40967a17 1-73
+harmonyos-apps/mobilegym/apps/Meituan/res/strings.en.ts
+  h_de08bd40967a17 1-80
+harmonyos-apps/mobilegym/apps/Meituan/res/strings.ts
+  h_de08bd40967a17 1-78
+harmonyos-apps/mobilegym/apps/Meituan/state.ts
+  h_de08bd40967a17 1-162
+harmonyos-apps/mobilegym/apps/Meituan/types.ts
+  h_de08bd40967a17 1-64
+harmonyos-apps/mobilegym/apps/Pinduoduo/PinduoduoApp.tsx
+  h_de08bd40967a17 1-102
+harmonyos-apps/mobilegym/apps/Pinduoduo/components/PinduoduoNavigationHandler.tsx
+  h_de08bd40967a17 1-33
+harmonyos-apps/mobilegym/apps/Pinduoduo/components/TabBar.tsx
+  h_de08bd40967a17 1-103
+harmonyos-apps/mobilegym/apps/Pinduoduo/data/defaults.json
+  h_de08bd40967a17 1-183
+harmonyos-apps/mobilegym/apps/Pinduoduo/data/index.ts
+  h_de08bd40967a17 1-89
+harmonyos-apps/mobilegym/apps/Pinduoduo/hooks/usePinduoduoGestures.ts
+  h_de08bd40967a17 1-49
+harmonyos-apps/mobilegym/apps/Pinduoduo/hooks/usePinduoduoStrings.ts
+  h_de08bd40967a17 1-9
+harmonyos-apps/mobilegym/apps/Pinduoduo/images.d.ts
+  h_de08bd40967a17 1-24
+harmonyos-apps/mobilegym/apps/Pinduoduo/manifest.ts
+  h_de08bd40967a17 1-30
+harmonyos-apps/mobilegym/apps/Pinduoduo/navigation.declaration.ts
+  h_de08bd40967a17 1-323
+harmonyos-apps/mobilegym/apps/Pinduoduo/navigation.ts
+  h_de08bd40967a17 1-244
+harmonyos-apps/mobilegym/apps/Pinduoduo/navigation.types.ts
+  h_de08bd40967a17 1-323
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/ChatPage.tsx
+  h_de08bd40967a17 1-76
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/HomePage.tsx
+  h_de08bd40967a17 1-331
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/MePage.tsx
+  h_de08bd40967a17 1-181
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/ProductDetailPage.tsx
+  h_de08bd40967a17 1-201
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/PromoPage.tsx
+  h_de08bd40967a17 1-103
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/SearchPage.tsx
+  h_de08bd40967a17 1-166
+harmonyos-apps/mobilegym/apps/Pinduoduo/pages/VideoPage.tsx
+  h_de08bd40967a17 1-113
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/anim.ts
+  h_de08bd40967a17 1-10
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/colors.states.ts
+  h_de08bd40967a17 1-2
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/colors.ts
+  h_de08bd40967a17 1-14
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/dimens.ts
+  h_de08bd40967a17 1-6
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/icons.tsx
+  h_de08bd40967a17 1-69
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/strings.en.ts
+  h_de08bd40967a17 1-69
+harmonyos-apps/mobilegym/apps/Pinduoduo/res/strings.ts
+  h_de08bd40967a17 1-67
+harmonyos-apps/mobilegym/apps/Pinduoduo/state.ts
+  h_de08bd40967a17 1-147
+harmonyos-apps/mobilegym/apps/Pinduoduo/types.ts
+  h_de08bd40967a17 1-60
+harmonyos-apps/mobilegym/apps/QQBrowser/QQBrowserApp.tsx
+  h_de08bd40967a17 1-102
+harmonyos-apps/mobilegym/apps/QQBrowser/components/QQBrowserNavigationHandler.tsx
+  h_de08bd40967a17 1-33
+harmonyos-apps/mobilegym/apps/QQBrowser/components/TabBar.tsx
+  h_de08bd40967a17 1-94
+harmonyos-apps/mobilegym/apps/QQBrowser/data/defaults.json
+  h_de08bd40967a17 1-203
+harmonyos-apps/mobilegym/apps/QQBrowser/data/index.ts
+  h_de08bd40967a17 1-45
+harmonyos-apps/mobilegym/apps/QQBrowser/hooks/useQQBrowserGestures.ts
+  h_de08bd40967a17 1-49
+harmonyos-apps/mobilegym/apps/QQBrowser/hooks/useQQBrowserStrings.ts
+  h_de08bd40967a17 1-9
+harmonyos-apps/mobilegym/apps/QQBrowser/images.d.ts
+  h_de08bd40967a17 1-24
+harmonyos-apps/mobilegym/apps/QQBrowser/manifest.ts
+  h_de08bd40967a17 1-30
+harmonyos-apps/mobilegym/apps/QQBrowser/navigation.declaration.ts
+  h_de08bd40967a17 1-327
+harmonyos-apps/mobilegym/apps/QQBrowser/navigation.ts
+  h_de08bd40967a17 1-244
+harmonyos-apps/mobilegym/apps/QQBrowser/navigation.types.ts
+  h_de08bd40967a17 1-323
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/ArticleDetailPage.tsx
+  h_de08bd40967a17 1-159
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/FeedPage.tsx
+  h_de08bd40967a17 1-160
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/FilesPage.tsx
+  h_de08bd40967a17 1-103
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/HomePage.tsx
+  h_de08bd40967a17 1-210
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/MePage.tsx
+  h_de08bd40967a17 1-119
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/NovelPage.tsx
+  h_de08bd40967a17 1-92
+harmonyos-apps/mobilegym/apps/QQBrowser/pages/SearchPage.tsx
+  h_de08bd40967a17 1-160
+harmonyos-apps/mobilegym/apps/QQBrowser/res/anim.ts
+  h_de08bd40967a17 1-10
+harmonyos-apps/mobilegym/apps/QQBrowser/res/colors.states.ts
+  h_de08bd40967a17 1-2
+harmonyos-apps/mobilegym/apps/QQBrowser/res/colors.ts
+  h_de08bd40967a17 1-12
+harmonyos-apps/mobilegym/apps/QQBrowser/res/dimens.ts
+  h_de08bd40967a17 1-6
+harmonyos-apps/mobilegym/apps/QQBrowser/res/icons.tsx
+  h_de08bd40967a17 1-69
+harmonyos-apps/mobilegym/apps/QQBrowser/res/strings.en.ts
+  h_de08bd40967a17 1-56
+harmonyos-apps/mobilegym/apps/QQBrowser/res/strings.ts
+  h_de08bd40967a17 1-54
+harmonyos-apps/mobilegym/apps/QQBrowser/state.ts
+  h_de08bd40967a17 1-122
+harmonyos-apps/mobilegym/apps/QQBrowser/types.ts
+  h_de08bd40967a17 1-50
+harmonyos-apps/mobilegym/os/launcher/defaults.json
+  h_de08bd40967a17 80,85,90,95,100,105,110,115
+harmonyos-apps/mobilegym/os/launcher/types.ts
+  h_de08bd40967a17 3
+src/collector/cropper.py
+  h_de08bd40967a17 60,62-64,74-75,87-94,101
+tests/test_gym_cleaner.py
+  h_de08bd40967a17 121-237
+tests/test_renderer_integration.py
+  h_de08bd40967a17 176-264
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.2",
+  "base_commit_sha": "5634332875b6367b60859a94410c97e2df09af32",
+  "prompts": {},
+  "humans": {
+    "h_de08bd40967a17": {
+      "author": "lishiming <lishiming2@huawei.com>"
+    }
+  }
+}
