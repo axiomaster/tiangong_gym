@@ -1,0 +1,155 @@
+{
+  "user": {
+    "nickname": "淘气值会员_8892",
+    "tbAccount": "tb_harmony_8892",
+    "taoCoins": 1280,
+    "couponsCount": 6,
+    "followedShopsCount": 18,
+    "footprintsCount": 42
+  },
+  "searchPlaceholders": [
+    "机械键盘客制化",
+    "安踏冠军猎隼3代越野跑鞋",
+    "复古格纹长袖衬衫女"
+  ],
+  "searchDiscover": [
+    "机械键盘客制化",
+    "安踏冠军猎隼3代",
+    "阿美咔叽复古格纹衬衫",
+    "百亿补贴数码",
+    "户外防水越野跑鞋",
+    "春秋新款宽松上衣"
+  ],
+  "products": [
+    {
+      "id": "prod_anta_3",
+      "title": "安踏冠军猎隼3代｜户外越野跑鞋男女防水防滑专业竞速训练运动鞋",
+      "price": 809,
+      "priceText": "809",
+      "originalPriceText": "999",
+      "salesText": "600+人付款",
+      "shopName": "安踏官方旗舰店",
+      "isTmall": true,
+      "hasReturnInsurance": true,
+      "imageKey": "anta_shoes",
+      "category": "recommend",
+      "specs": ["猎隼3代-曜石黑 42码", "猎隼3代-山野灰 41码"],
+      "reviewSummary": "防滑抓地力很强，户外跑山非常稳",
+      "reviewUser": "山野跑者**8",
+      "reviewContent": "上脚包裹感极佳，Vibram大底抓地力特别稳，周末去莫干山越野跑完全不打滑！"
+    },
+    {
+      "id": "prod_plaid_shirt",
+      "title": "窄版显瘦阿美咔叽复古格纹长袖衬衫女2025春秋新款宽松百搭上衣潮",
+      "price": 58,
+      "priceText": "58",
+      "originalPriceText": "89",
+      "salesText": "1000+人付款",
+      "shopName": "CHIC复古女装馆",
+      "isTmall": true,
+      "hasReturnInsurance": true,
+      "imageKey": "plaid_shirt",
+      "category": "outfit",
+      "specs": ["经典红棕格 均码", "复古蓝绿格 均码"],
+      "reviewSummary": "面料柔软舒适，版型很显瘦",
+      "reviewUser": "小鹿**穿搭",
+      "reviewContent": "颜色完全没有色差，纯棉磨毛质感很舒服，单穿或者当防晒外搭都超级好看。"
+    },
+    {
+      "id": "prod_subsidy_item",
+      "title": "【百亿补贴】旗舰智能降噪耳机无线蓝牙超长续航官方正品保障",
+      "price": 1589,
+      "priceText": "1589",
+      "originalPriceText": "1999",
+      "salesText": "2000+人付款",
+      "shopName": "百亿补贴官方精选",
+      "isTmall": true,
+      "hasReturnInsurance": true,
+      "imageKey": "subsidy_phone",
+      "category": "subsidy",
+      "specs": ["深空黑 官方标配", "月光白 官方标配"],
+      "reviewSummary": "买贵必赔，降噪效果一绝",
+      "reviewUser": "数码控**1",
+      "reviewContent": "百亿补贴入手太划算了，顺丰次日达，全新未拆封正品，主动降噪非常安静。"
+    },
+    {
+      "id": "prod_seckill_item",
+      "title": "【淘宝秒杀】加厚厨房抽纸整箱家用实惠装原生木浆餐巾纸限时特惠",
+      "price": 5.1,
+      "priceText": "5.1",
+      "originalPriceText": "15.9",
+      "salesText": "5000+人付款",
+      "shopName": "天天特卖工厂店",
+      "isTmall": false,
+      "hasReturnInsurance": true,
+      "imageKey": "seckill_deal",
+      "category": "flash",
+      "specs": ["4层加厚*6包", "4层加厚*12包"],
+      "reviewSummary": "天天低价，纸张厚实湿水不易破",
+      "reviewUser": "生活家**9",
+      "reviewContent": "秒杀价5.1元真的超值，纸张很厚实，平时擦桌子擦手完全不掉屑。"
+    }
+  ],
+  "initialCart": [
+    {
+      "productId": "prod_anta_3",
+      "quantity": 1,
+      "selected": true,
+      "spec": "猎隼3代-曜石黑 42码"
+    },
+    {
+      "productId": "prod_plaid_shirt",
+      "quantity": 1,
+      "selected": true,
+      "spec": "经典红棕格 均码"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_logistics",
+      "sender": "菜鸟裹裹物流通知",
+      "tag": "官方",
+      "preview": "您购买的【窄版显瘦阿美咔叽复古格纹长袖衬衫】已由杭州转运中心发出",
+      "timeText": "10:24",
+      "unread": 1
+    },
+    {
+      "id": "msg_anta",
+      "sender": "安踏官方旗舰店",
+      "tag": "店铺",
+      "preview": "亲，安踏冠军猎隼3代正在参加国庆狂欢活动，领券立减15元哦~",
+      "timeText": "09:15",
+      "unread": 1
+    },
+    {
+      "id": "msg_promo",
+      "sender": "淘宝活动优惠",
+      "tag": "福利",
+      "preview": "国庆狂欢255元消费券包待领取，百亿补贴买贵必赔！",
+      "timeText": "昨天",
+      "unread": 0
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid_1",
+      "author": "山野装备测评室",
+      "title": "实测安踏冠军猎隼3代越野跑鞋！泥地防滑+防水性能到底有多猛？#越野跑鞋 #户外装备",
+      "likes": 3420,
+      "liked": false,
+      "followed": false,
+      "linkedProductId": "prod_anta_3",
+      "imageKey": "anta_shoes"
+    },
+    {
+      "id": "vid_2",
+      "author": "早秋穿搭日记",
+      "title": "58元挖到宝！这件阿美咔叽复古格纹衬衫窄版剪裁太显瘦了 #秋季穿搭 #格纹衬衫",
+      "likes": 5180,
+      "liked": true,
+      "followed": true,
+      "linkedProductId": "prod_plaid_shirt",
+      "imageKey": "plaid_shirt"
+    }
+  ]
+}

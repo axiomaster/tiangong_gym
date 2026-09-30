@@ -94,7 +94,7 @@ def dump_to_cue(
                 content=str(attrs.get("content")) if node.get("$type") == "Text" else "",
                 bbox=bbox_from_corners(*rect),
                 description=_description(attrs),
-                style=style_from_attrs(attrs),
+                style=style_from_attrs(attrs, resolution=page.resolution),
                 actions=uitest.actions_for_rect(rect, regions),
             )
         )

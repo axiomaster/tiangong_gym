@@ -24,7 +24,9 @@ from collector.pageinfo import (
 from schema.input_spec import InputSpec, SpecNode, Viewport
 
 
-def _convert_node(node: dict[str, Any], assets: dict[int, str], regions: list) -> SpecNode | None:
+def _convert_node(
+    node: dict[str, Any], assets: dict[int, str], regions: list, resolution: float = 1.0
+) -> SpecNode | None:
     node_type = node.get("$type")
     if node_type is None:
         return None
@@ -34,14 +36,14 @@ def _convert_node(node: dict[str, Any], assets: dict[int, str], regions: list) -
 
     node_id = int(node["$ID"]) if node.get("$ID") is not None else 0
     attrs = node.get("$attrs") or {}
-    style = style_from_attrs(attrs)
+    style = style_from_attrs(attrs, resolution=resolution)
     if node_id in assets and node_type != "Image":
         # node paints a cropped slice as its background (e.g. Stack with backgroundImage)
         style["backgroundImage"] = f"url({assets[node_id]})"
     children = [
         converted
         for child in node.get("$children") or []
-        if (converted := _convert_node(child, assets, regions)) is not None
+        if (converted := _convert_node(child, assets, regions, resolution)) is not None
     ]
     content = attrs.get("content")
     return SpecNode(
@@ -65,7 +67,7 @@ def dump_to_spec(
     page: PageInfo = parse_page_info(dump)
     assets = assets or {}
     regions = uitest.collect_regions(uitest_dump, bundle_name=page.bundle_name) if uitest_dump else []
-    root = _convert_node(page.root, assets, regions)
+    root = _convert_node(page.root, assets, regions, page.resolution)
     if root is None:
         raise ValueError("failed to convert the dump root node")
     return InputSpec(

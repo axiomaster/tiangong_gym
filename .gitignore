@@ -7,6 +7,6 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 harmonyos-apps/*__v*
-data/
+/data/
 skills
 *.egg-info/

@@ -60,3 +60,61 @@ def test_real_vmall_closed_loop(browser, tmp_path):
     gym_cue = clean_bundle(bundle, browser)
     result = diff(device_cue, gym_cue)
     _assert_gates(result)
+
+
+@pytest.mark.skipif(
+    not all(
+        Path(p).exists()
+        for p in (
+            "reference/data/taobao/pageInfo.json",
+            "reference/data/taobao/screenshot.jpeg",
+            "reference/data/taobao/dump.json",
+        )
+    ),
+    reason="reference/data/taobao capture not available (gitignored)",
+)
+def test_real_taobao_closed_loop(browser, tmp_path):
+    import json
+
+    dump = json.loads(Path("reference/data/taobao/pageInfo.json").read_text(encoding="utf-8"))
+    uitest_dump = json.loads(Path("reference/data/taobao/dump.json").read_text(encoding="utf-8"))
+
+    bundle = package_app(
+        dump,
+        screenshot="reference/data/taobao/screenshot.jpeg",
+        uitest_dump=uitest_dump,
+        out_root=tmp_path / "apps",
+    )
+    device_cue = dump_to_cue(dump, uitest_dump=uitest_dump, screenshot="screenshot.jpeg")
+    gym_cue = clean_bundle(bundle, browser)
+    result = diff(device_cue, gym_cue)
+    _assert_gates(result)
+
+
+@pytest.mark.skipif(
+    not all(
+        Path(p).exists()
+        for p in (
+            "reference/data/douyin/pageInfo.json",
+            "reference/data/douyin/screenshot.jpeg",
+            "reference/data/douyin/dump.json",
+        )
+    ),
+    reason="reference/data/douyin capture not available (gitignored)",
+)
+def test_real_douyin_closed_loop(browser, tmp_path):
+    import json
+
+    dump = json.loads(Path("reference/data/douyin/pageInfo.json").read_text(encoding="utf-8"))
+    uitest_dump = json.loads(Path("reference/data/douyin/dump.json").read_text(encoding="utf-8"))
+
+    bundle = package_app(
+        dump,
+        screenshot="reference/data/douyin/screenshot.jpeg",
+        uitest_dump=uitest_dump,
+        out_root=tmp_path / "apps",
+    )
+    device_cue = dump_to_cue(dump, uitest_dump=uitest_dump, screenshot="screenshot.jpeg")
+    gym_cue = clean_bundle(bundle, browser)
+    result = diff(device_cue, gym_cue)
+    _assert_gates(result)

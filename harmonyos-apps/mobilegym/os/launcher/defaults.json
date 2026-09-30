@@ -107,12 +107,12 @@
         "cellY": 5
       },
       {
-        "appId": "calendar",
+        "appId": "taobao",
         "cellX": 2,
         "cellY": 5
       },
       {
-        "appId": "clock",
+        "appId": "douyin",
         "cellX": 3,
         "cellY": 5
       }

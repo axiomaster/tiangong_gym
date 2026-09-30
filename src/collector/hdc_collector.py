@@ -24,8 +24,10 @@ from pathlib import Path
 
 #: Well-known standard paths for HDC toolchains on macOS / Linux
 HDC_CANDIDATES = (
+    "/Applications/DevEco-Studio.app/Contents/sdk/default/openharmony/toolchains/hdc",
     "/Users/ohci/tools/ohos-command-line-tools/sdk/default/openharmony/toolchains/hdc",
     os.path.expanduser("~/tools/ohos-command-line-tools/sdk/default/openharmony/toolchains/hdc"),
+    os.path.expanduser("~/tools/command-line-tools/sdk/default/openharmony/toolchains/hdc"),
     os.path.expanduser("~/Library/Huawei/Sdk/openharmony/toolchains/hdc"),
 )
 

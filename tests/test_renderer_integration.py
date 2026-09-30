@@ -127,3 +127,49 @@ def test_vmall_app_renders(page, tmp_path):
         page.screenshot(path=str(shot), full_page=True)
         assert shot.stat().st_size > 10_000
 
+
+@pytest.mark.skipif(
+    not Path("harmonyos-apps/com.taobao.taobao4hmos/spec.json").exists(),
+    reason="taobao virtual app not packaged yet",
+)
+def test_taobao_app_renders(page, tmp_path):
+    bundle = Path("harmonyos-apps/com.taobao.taobao4hmos")
+    spec = json.loads((bundle / "spec.json").read_text(encoding="utf-8"))
+
+    with serve_dir(bundle) as base:
+        load_app(page, base + "/index.html")
+
+        n_dom = page.locator("[data-component-id]").count()
+        assert n_dom == count_spec_nodes(spec["root"])
+
+        rendered_text = page.evaluate("() => document.body.innerText")
+        assert "推荐" in rendered_text
+        assert "搜索" in rendered_text or "百亿补贴" in rendered_text
+
+        shot = tmp_path / "taobao_render.png"
+        page.screenshot(path=str(shot), full_page=True)
+        assert shot.stat().st_size > 10_000
+
+
+@pytest.mark.skipif(
+    not Path("harmonyos-apps/com.ss.hm.ugc.aweme/spec.json").exists(),
+    reason="douyin virtual app not packaged yet",
+)
+def test_douyin_app_renders(page, tmp_path):
+    bundle = Path("harmonyos-apps/com.ss.hm.ugc.aweme")
+    spec = json.loads((bundle / "spec.json").read_text(encoding="utf-8"))
+
+    with serve_dir(bundle) as base:
+        load_app(page, base + "/index.html")
+
+        n_dom = page.locator("[data-component-id]").count()
+        assert n_dom == count_spec_nodes(spec["root"])
+
+        rendered_text = page.evaluate("() => document.body.innerText")
+        assert "推荐" in rendered_text
+        assert "首页" in rendered_text and "朋友" in rendered_text
+
+        shot = tmp_path / "douyin_render.png"
+        page.screenshot(path=str(shot), full_page=True)
+        assert shot.stat().st_size > 10_000
+

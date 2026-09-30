@@ -1,0 +1,88 @@
+{
+  "categories": [
+    "华为手机",
+    "运动健康",
+    "影音娱乐",
+    "智慧办公",
+    "鸿蒙智选",
+    "鸿蒙智家",
+    "鸿蒙智行",
+    "乾崑智驾",
+    "国家补贴",
+    "教育优惠"
+  ],
+  "products": [
+    {
+      "id": "mate-x6",
+      "name": "HUAWEI Mate X6",
+      "desc": "玄武水滴铰链 | 红枫原色影像 | 鸿蒙NEXT先锋体验",
+      "price": 12999,
+      "originalPrice": 13999,
+      "sales": "10万+人已购",
+      "tag": "新品热销",
+      "category": "华为手机",
+      "colors": ["寰宇红", "曜石黑", "星云灰", "深海蓝"],
+      "specs": ["12GB+512GB", "16GB+512GB 典藏版", "16GB+1TB 典藏版"]
+    },
+    {
+      "id": "mate-70-pro",
+      "name": "HUAWEI Mate 70 Pro+",
+      "desc": "高亮钛玄武架构 | 红枫原色摄像头 | 超可靠卫星通信",
+      "price": 8499,
+      "originalPrice": 8999,
+      "sales": "20万+人已购",
+      "tag": "旗舰爆款",
+      "category": "华为手机",
+      "colors": ["金丝银锦", "飞天青", "羽砂黑", "墨韵黑"],
+      "specs": ["16GB+512GB", "16GB+1TB"]
+    },
+    {
+      "id": "watch-d2",
+      "name": "HUAWEI WATCH D2",
+      "desc": "动态血压监测 | 医疗级腕部心电采集 | 轻薄气囊表带",
+      "price": 2888,
+      "originalPrice": 2988,
+      "sales": "5万+人已购",
+      "tag": "国家补贴",
+      "category": "运动健康",
+      "colors": ["幻夜黑", "晨曦金"],
+      "specs": ["氟橡胶表带", "真皮复合表带"]
+    },
+    {
+      "id": "freebuds-pro-4",
+      "name": "HUAWEI FreeBuds Pro 4",
+      "desc": "华为悦彰耳机 | 2.3Mbps无损传输 | 双向静谧通话",
+      "price": 1499,
+      "originalPrice": 1599,
+      "sales": "8万+人已购",
+      "tag": "悦彰音质",
+      "category": "影音娱乐",
+      "colors": ["曜石黑", "云杉绿", "雪域白"],
+      "specs": ["星闪无损版"]
+    },
+    {
+      "id": "matebook-x-pro",
+      "name": "HUAWEI MateBook X Pro",
+      "desc": "980g超轻薄机身 | 柔性OLED原色屏 | 酷睿Ultra 9旗舰处理器",
+      "price": 11999,
+      "originalPrice": 12999,
+      "sales": "3万+人已购",
+      "tag": "至高省1000",
+      "category": "智慧办公",
+      "colors": ["晴蓝", "拂晓粉", "砚黑", "宣白"],
+      "specs": ["Ultra 7 32GB+1TB", "Ultra 9 32GB+2TB"]
+    },
+    {
+      "id": "aito-m9",
+      "name": "问界 M9 Ultra",
+      "desc": "华为乾崑智驾ADS 3.0 | 百万像素智慧投影大灯 | 途灵智能底盘",
+      "price": 529800,
+      "originalPrice": 569800,
+      "sales": "15万+大定",
+      "tag": "智驾旗舰",
+      "category": "鸿蒙智行",
+      "colors": ["雅丹黑", "星河蓝", "鎏金黑"],
+      "specs": ["增程 Ultra 五座版", "纯电 Ultra 六座版"]
+    }
+  ]
+}

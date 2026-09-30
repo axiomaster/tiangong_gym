@@ -173,6 +173,8 @@
       <button class="tab-btn active" onclick="showAll()">并排全览</button>
       <button class="tab-btn" onclick="showApp('xhs')">仅看小红书</button>
       <button class="tab-btn" onclick="showApp('vmall')">仅看华为商城</button>
+      <button class="tab-btn" onclick="showApp('taobao')">仅看淘宝</button>
+      <button class="tab-btn" onclick="showApp('douyin')">仅看抖音</button>
     </div>
   </header>
 
@@ -210,18 +212,56 @@
         </div>
       </div>
     </div>
+
+    <!-- 淘宝 -->
+    <div class="app-card" id="card-taobao">
+      <div class="card-header">
+        <div class="app-info">
+          <h2>淘宝 (Taobao)</h2>
+          <div class="meta">包名: com.taobao.taobao4hmos · 1320×2848</div>
+        </div>
+        <a class="open-link" href="com.taobao.taobao4hmos/index.html" target="_blank">全屏打开 ↗</a>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-frame-wrapper">
+          <iframe src="com.taobao.taobao4hmos/index.html" title="淘宝虚拟应用"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 抖音 -->
+    <div class="app-card" id="card-douyin">
+      <div class="card-header">
+        <div class="app-info">
+          <h2>抖音 (Douyin)</h2>
+          <div class="meta">包名: com.ss.hm.ugc.aweme · 1320×2848</div>
+        </div>
+        <a class="open-link" href="com.ss.hm.ugc.aweme/index.html" target="_blank">全屏打开 ↗</a>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-frame-wrapper">
+          <iframe src="com.ss.hm.ugc.aweme/index.html" title="抖音虚拟应用"></iframe>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script>
+    var APPS = ['vmall', 'xhs', 'taobao', 'douyin'];
+    var TAB_ORDER = ['all', 'xhs', 'vmall', 'taobao', 'douyin'];
     function showAll() {
-      document.getElementById('card-vmall').style.display = 'flex';
-      document.getElementById('card-xhs').style.display = 'flex';
+      APPS.forEach(function(k) {
+        document.getElementById('card-' + k).style.display = 'flex';
+      });
       updateActiveTab(0);
     }
     function showApp(app) {
-      document.getElementById('card-vmall').style.display = (app === 'vmall') ? 'flex' : 'none';
-      document.getElementById('card-xhs').style.display = (app === 'xhs') ? 'flex' : 'none';
-      updateActiveTab(app === 'xhs' ? 1 : 2);
+      APPS.forEach(function(k) {
+        document.getElementById('card-' + k).style.display = (app === k) ? 'flex' : 'none';
+      });
+      updateActiveTab(TAB_ORDER.indexOf(app));
     }
     function updateActiveTab(idx) {
       var btns = document.querySelectorAll('.tab-btn');

@@ -1,0 +1,105 @@
+{
+  "user": {
+    "name": "HarmonyOS极客玩家",
+    "douyinId": "dy_harmony_2026",
+    "bio": "分享科技与日常生活 · 记录美好瞬间",
+    "likesReceived": "2.8万",
+    "followingCount": 64,
+    "followersCount": "3,920"
+  },
+  "mainVideo": {
+    "id": "vid_nanmen_01",
+    "authorId": "creator_nanmen",
+    "authorHandle": "@南门张老板",
+    "authorName": "南门张老板",
+    "captionShort": "男装人的国庆八天乐# 服...",
+    "captionFull": "男装人的国庆八天乐# 服装人日常 # 男装穿搭 # 实体店老板日常 国庆假期店里忙不停，感谢老铁们支持！",
+    "likesCountText": "15.7万",
+    "commentsCount": 4193,
+    "starsCount": 6754,
+    "sharesCountText": "1.4万",
+    "liked": false,
+    "starred": false,
+    "followedAuthor": false,
+    "comments": [
+      {
+        "id": "cmt_1",
+        "user": "阿杰穿搭笔记",
+        "content": "张老板这波国庆状态太真实了，做服装人真的全年无休哈哈！",
+        "timeText": "10分钟前 · 四川",
+        "likes": 1284,
+        "liked": false
+      },
+      {
+        "id": "cmt_2",
+        "user": "成都老主顾",
+        "content": "昨天刚去南门店里拿了两件夹克，版型确实巴适！",
+        "timeText": "25分钟前 · 四川",
+        "likes": 642,
+        "liked": true
+      },
+      {
+        "id": "cmt_3",
+        "user": "打工人小陈",
+        "content": "BGM一响就有内味了，祝张老板国庆爆单！",
+        "timeText": "1小时前 · 广东",
+        "likes": 319,
+        "liked": false
+      }
+    ]
+  },
+  "friends": [
+    {
+      "id": "fr_1",
+      "name": "南门张老板",
+      "bio": "专注品质男装十年 · 实体店日常",
+      "statusText": "发布了新作品：男装人的国庆八天乐",
+      "mutual": true
+    },
+    {
+      "id": "fr_2",
+      "name": "山野户外老周",
+      "bio": "周末徒步越野 · 装备测评",
+      "statusText": "推荐了视频 · 18分钟前",
+      "mutual": false
+    },
+    {
+      "id": "fr_3",
+      "name": "数码极客阿K",
+      "bio": "HarmonyOS NEXT 深度体验官",
+      "statusText": "在线 · 刚刚看过你的主页",
+      "mutual": true
+    }
+  ],
+  "messages": [
+    {
+      "id": "dmsg_1",
+      "sender": "南门张老板",
+      "preview": "感谢老铁点赞关注！国庆来店里报暗号有福利~",
+      "timeText": "11:20",
+      "unread": 1
+    },
+    {
+      "id": "dmsg_2",
+      "sender": "互动消息",
+      "preview": "阿杰穿搭笔记 赞了你的评论",
+      "timeText": "09:40",
+      "unread": 0
+    },
+    {
+      "id": "dmsg_3",
+      "sender": "抖音小助手",
+      "preview": "国庆狂欢创作周开启，带话题发布视频赢流量券！",
+      "timeText": "昨天",
+      "unread": 0
+    }
+  ],
+  "hotSearches": [
+    "男装人的国庆八天乐",
+    "国庆出游穿搭指南",
+    "HarmonyOS原生应用体验",
+    "秋季夹克怎么搭好看",
+    "成都南门探店日常",
+    "热门BGM合集"
+  ]
+}

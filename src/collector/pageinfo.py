@@ -70,10 +70,11 @@ def parse_number(value: Any) -> float | None:
     return float(m.group(0)) if m else None
 
 
-def style_from_attrs(attrs: dict[str, Any]) -> dict[str, Any]:
+def style_from_attrs(attrs: dict[str, Any], resolution: float = 1.0) -> dict[str, Any]:
     """Extract the renderer-relevant subset of `$attrs`, normalizing units.
 
     - fontSize "16.00fp" -> 16.0 (fp == vp for fonts)
+    - fontSize "46.00px" -> converted to fp via resolution when resolution > 0
     - fontWeight "500" -> 500
     - colors kept verbatim (#AARRGGBB / #RRGGBB, HarmonyOS ARGB order)
     - unset ("NONE") attributes are dropped
@@ -86,6 +87,8 @@ def style_from_attrs(attrs: dict[str, Any]) -> dict[str, Any]:
         if key == "fontSize":
             num = parse_number(value)
             if num:
+                if isinstance(value, str) and value.strip().lower().endswith("px") and resolution > 0:
+                    num = round(num / resolution, 2)
                 style[key] = num
         elif key == "fontWeight":
             num = parse_number(value)
@@ -127,6 +130,16 @@ class PageInfo(BaseModel):
         return iter_tree(self.root)
 
 
+def _normalize_ids(root: dict[str, Any]) -> None:
+    """Ensure every node has a unique integer $ID (assigning -1, -2, ... to unset/-1 nodes)."""
+    next_neg = -1
+    for node in iter_tree(root):
+        raw_id = node.get("$ID")
+        if raw_id is None or int(raw_id) < 0:
+            node["$ID"] = next_neg
+            next_neg -= 1
+
+
 def parse_page_info(dump: dict[str, Any]) -> PageInfo:
     """Parse a top-level hidumper dump: unwrap the double-encoded pageInfo string."""
     raw = dump.get("pageInfo")
@@ -148,6 +161,7 @@ def parse_page_info(dump: dict[str, Any]) -> PageInfo:
     root["$type"] = "root"
     root.setdefault("$ID", 0)
     root["$rect"] = f"[0.00, 0.00],[{width:.2f},{height:.2f}]"
+    _normalize_ids(root)
     return PageInfo(
         bundle_name=bundle_name,
         page_url=str(tree.get("pageUrl") or ""),

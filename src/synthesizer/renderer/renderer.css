@@ -20,7 +20,6 @@
 .ark-node {
   position: absolute;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 img.ark-node {
@@ -28,6 +27,7 @@ img.ark-node {
 }
 
 .ark-text {
+  overflow: hidden;
   white-space: pre-wrap;
   word-break: break-all;
 }

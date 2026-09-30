@@ -47,7 +47,22 @@
       css.backgroundSize = "100% 100%"; // crop matches the node rect exactly
     }
     if (s.fontColor) css.color = argbToCss(s.fontColor);
-    if (s.fontSize) css.fontSize = px(s.fontSize * resolution); // fp -> physical px
+    if (s.fontSize) {
+      var fsPx = s.fontSize * resolution; // fp -> physical px
+      css.fontSize = px(fsPx);
+      if (node.type === "Text" && rect[3] - rect[1] < fsPx * 1.75) {
+        css.whiteSpace = "nowrap";
+      }
+    }
+    if (node.type === "Text" && node.children && node.children.length) {
+      var firstChild = node.children[0];
+      if (firstChild && firstChild.type === "Image" && firstChild.rect) {
+        var indent = firstChild.rect[2] - rect[0];
+        if (indent > 0 && indent < (rect[2] - rect[0])) {
+          css.textIndent = px(indent + 6);
+        }
+      }
+    }
     if (s.fontWeight != null) css.fontWeight = String(s.fontWeight);
     if (s.opacity != null) css.opacity = String(s.opacity);
     if (s.textAlign) {
@@ -86,7 +101,7 @@
       if (node.asset_path) el.src = node.asset_path;
       el.alt = node.content || "";
       el.draggable = false;
-    } else if (node.content) {
+    } else if (node.type === "Text" && node.content) {
       el.textContent = node.content;
     }
     if (SCROLLABLE[node.type]) {

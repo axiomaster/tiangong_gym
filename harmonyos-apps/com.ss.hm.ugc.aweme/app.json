@@ -1,0 +1,12 @@
+{
+  "bundle_name": "com.ss.hm.ugc.aweme",
+  "page_url": "host/MainShell",
+  "viewport": {
+    "width": 1320.0,
+    "height": 2848.0
+  },
+  "resolution": 3.375,
+  "generated_at": "2026-09-29T16:02:49+00:00",
+  "source": "reference/data/douyin/pageInfo.json",
+  "assets": 14
+}

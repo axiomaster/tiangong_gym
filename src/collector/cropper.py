@@ -57,9 +57,18 @@ def _is_compound_container(
     return False
 
 
+def _encloses_text(rect: tuple[float, float, float, float], page: PageInfo) -> bool:
+    for other in page.iter_nodes():
+        if other.get("$type") == "Text":
+            r = parse_rect(other.get("$rect"))
+            if r and rect[0] <= r[0] and rect[1] <= r[1] and rect[2] >= r[2] and rect[3] >= r[3]:
+                return True
+    return False
+
+
 def collect_image_nodes(page: PageInfo) -> list[tuple[int, tuple[float, float, float, float]]]:
-    """Find (id, rect) for every node that renders an image: `$type == "Image"` or
-    any node with a resource-bearing backgroundImage."""
+    """Find (id, rect) for every node that renders an image: `$type == "Image"`,
+    `XComponent` video surfaces, or any node with a resource-bearing backgroundImage."""
     found: list[tuple[int, tuple[float, float, float, float]]] = []
     seen: set[int] = set()
     for node in page.iter_nodes():
@@ -70,12 +79,17 @@ def collect_image_nodes(page: PageInfo) -> list[tuple[int, tuple[float, float, f
         if node_id in seen:
             continue
         attrs = node.get("$attrs") or {}
-        if node.get("$type") != "Image" and not _has_background_image(attrs):
+        node_type = node.get("$type")
+        is_surface = node_type == "XComponent"
+        if node_type != "Image" and not is_surface and not _has_background_image(attrs):
             continue
         rect = parse_rect(node.get("$rect"))
         if rect is None:
             continue
-        if _is_compound_container(node_id, rect, page):
+        if is_surface:
+            if _encloses_text(rect, page):
+                continue
+        elif _is_compound_container(node_id, rect, page):
             continue
         found.append((node_id, rect))
         seen.add(node_id)
