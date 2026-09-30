@@ -10,3 +10,4 @@ harmonyos-apps/*__v*
 /data/
 skills
 *.egg-info/
+docs/diagrams/
