@@ -118,3 +118,120 @@ def test_real_douyin_closed_loop(browser, tmp_path):
     gym_cue = clean_bundle(bundle, browser)
     result = diff(device_cue, gym_cue)
     _assert_gates(result)
+
+
+@pytest.mark.skipif(
+    not all(
+        Path(p).exists()
+        for p in (
+            "reference/data/pinduoduo/pageInfo.json",
+            "reference/data/pinduoduo/screenshot.jpeg",
+            "reference/data/pinduoduo/dump.json",
+        )
+    ),
+    reason="reference/data/pinduoduo capture not available (gitignored)",
+)
+def test_real_pinduoduo_closed_loop(browser, tmp_path):
+    import json
+
+    dump = json.loads(Path("reference/data/pinduoduo/pageInfo.json").read_text(encoding="utf-8"))
+    uitest_dump = json.loads(Path("reference/data/pinduoduo/dump.json").read_text(encoding="utf-8"))
+
+    bundle = package_app(
+        dump,
+        screenshot="reference/data/pinduoduo/screenshot.jpeg",
+        uitest_dump=uitest_dump,
+        out_root=tmp_path / "apps",
+    )
+    device_cue = dump_to_cue(dump, uitest_dump=uitest_dump, screenshot="screenshot.jpeg")
+    gym_cue = clean_bundle(bundle, browser)
+    result = diff(device_cue, gym_cue)
+    _assert_gates(result)
+
+
+@pytest.mark.skipif(
+    not all(
+        Path(p).exists()
+        for p in (
+            "reference/data/meituan/pageInfo.json",
+            "reference/data/meituan/screenshot.jpeg",
+            "reference/data/meituan/dump.json",
+        )
+    ),
+    reason="reference/data/meituan capture not available (gitignored)",
+)
+def test_real_meituan_closed_loop(browser, tmp_path):
+    import json
+
+    dump = json.loads(Path("reference/data/meituan/pageInfo.json").read_text(encoding="utf-8"))
+    uitest_dump = json.loads(Path("reference/data/meituan/dump.json").read_text(encoding="utf-8"))
+
+    bundle = package_app(
+        dump,
+        screenshot="reference/data/meituan/screenshot.jpeg",
+        uitest_dump=uitest_dump,
+        out_root=tmp_path / "apps",
+    )
+    device_cue = dump_to_cue(dump, uitest_dump=uitest_dump, screenshot="screenshot.jpeg")
+    gym_cue = clean_bundle(bundle, browser)
+    result = diff(device_cue, gym_cue)
+    _assert_gates(result)
+
+
+@pytest.mark.skipif(
+    not all(
+        Path(p).exists()
+        for p in (
+            "reference/data/qqbrowser/pageInfo.json",
+            "reference/data/qqbrowser/screenshot.jpeg",
+            "reference/data/qqbrowser/dump.json",
+        )
+    ),
+    reason="reference/data/qqbrowser capture not available (gitignored)",
+)
+def test_real_qqbrowser_closed_loop(browser, tmp_path):
+    import json
+
+    dump = json.loads(Path("reference/data/qqbrowser/pageInfo.json").read_text(encoding="utf-8"))
+    uitest_dump = json.loads(Path("reference/data/qqbrowser/dump.json").read_text(encoding="utf-8"))
+
+    bundle = package_app(
+        dump,
+        screenshot="reference/data/qqbrowser/screenshot.jpeg",
+        uitest_dump=uitest_dump,
+        out_root=tmp_path / "apps",
+    )
+    device_cue = dump_to_cue(dump, uitest_dump=uitest_dump, screenshot="screenshot.jpeg")
+    gym_cue = clean_bundle(bundle, browser)
+    result = diff(device_cue, gym_cue)
+    _assert_gates(result)
+
+
+@pytest.mark.skipif(
+    not all(
+        Path(p).exists()
+        for p in (
+            "reference/data/baidunetdisk/pageInfo.json",
+            "reference/data/baidunetdisk/screenshot.jpeg",
+            "reference/data/baidunetdisk/dump.json",
+        )
+    ),
+    reason="reference/data/baidunetdisk capture not available (gitignored)",
+)
+def test_real_baidunetdisk_closed_loop(browser, tmp_path):
+    import json
+
+    dump = json.loads(Path("reference/data/baidunetdisk/pageInfo.json").read_text(encoding="utf-8"))
+    uitest_dump = json.loads(Path("reference/data/baidunetdisk/dump.json").read_text(encoding="utf-8"))
+
+    bundle = package_app(
+        dump,
+        screenshot="reference/data/baidunetdisk/screenshot.jpeg",
+        uitest_dump=uitest_dump,
+        out_root=tmp_path / "apps",
+    )
+    device_cue = dump_to_cue(dump, uitest_dump=uitest_dump, screenshot="screenshot.jpeg")
+    gym_cue = clean_bundle(bundle, browser)
+    result = diff(device_cue, gym_cue)
+    _assert_gates(result)
+

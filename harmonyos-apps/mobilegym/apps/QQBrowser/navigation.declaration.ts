@@ -1,0 +1,327 @@
+import { NavigationDeclaration } from './navigation.types';
+
+export const NAVIGATION_DECLARATION = {
+  app: 'qqbrowser',
+  routes: [
+    {
+      path: '/',
+      component: 'HomePage',
+      params: {},
+      entryPoint: 'home',
+      scrollContainers: [
+        { name: 'home-main', direction: 'vertical', description: 'QQ浏览器首页主体区域' },
+      ],
+      uiStates: [
+        {
+          id: 'home.base',
+          search: {},
+          description: 'QQ浏览器首页默认态',
+          actions: [
+            {
+              id: 'home.qbot.toggle',
+              label: '切换 QBot 深度思考模式',
+              behavior: 'toggle',
+              paramsSchema: { to: 'boolean' },
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: 'QQ浏览器首页',
+    },
+    {
+      path: '/feed',
+      component: 'FeedPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'feed-list', direction: 'vertical', description: '推荐资讯与全网热榜流' },
+      ],
+      uiStates: [
+        {
+          id: 'feed.base',
+          search: {},
+          description: '推荐资讯页默认',
+          actions: [
+            {
+              id: 'feed.article.bookmark.toggle',
+              label: '收藏或取消收藏资讯书签',
+              behavior: 'toggle',
+              scope: 'item',
+              paramsSchema: { articleId: 'string', to: 'boolean' },
+            },
+            {
+              id: 'feed.article.like.toggle',
+              label: '点赞或取消点赞资讯',
+              behavior: 'toggle',
+              scope: 'item',
+              paramsSchema: { articleId: 'string', to: 'boolean' },
+            },
+          ],
+        },
+      ],
+      queryParams: { channel: 'string' },
+      description: 'QQ浏览器推荐页',
+    },
+    {
+      path: '/novel',
+      component: 'NovelPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'novel-list', direction: 'vertical', description: '免费小说书架与书城列表' },
+      ],
+      uiStates: [
+        {
+          id: 'novel.base',
+          search: {},
+          description: '小说频道默认',
+          actions: [
+            {
+              id: 'novel.bookshelf.toggle',
+              label: '加入或移出小说书架',
+              behavior: 'toggle',
+              scope: 'item',
+              paramsSchema: { novelId: 'string', to: 'boolean' },
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: 'QQ浏览器小说页',
+    },
+    {
+      path: '/files',
+      component: 'FilesPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'files-list', direction: 'vertical', description: '文件管理与云盘列表' },
+      ],
+      uiStates: [
+        {
+          id: 'files.base',
+          search: {},
+          description: '文件管理页默认',
+          actions: [
+            {
+              id: 'files.item.star.toggle',
+              label: '星标或取消星标文件',
+              behavior: 'toggle',
+              scope: 'item',
+              paramsSchema: { fileId: 'string', to: 'boolean' },
+            },
+            {
+              id: 'files.item.delete',
+              label: '删除本地或云盘文件',
+              behavior: 'other',
+              scope: 'item',
+              paramsSchema: { fileId: 'string' },
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: 'QQ浏览器文件页',
+    },
+    {
+      path: '/me',
+      component: 'MePage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'me-main', direction: 'vertical', description: '我的个人中心与书签收藏' },
+      ],
+      uiStates: [
+        {
+          id: 'me.base',
+          search: {},
+          description: '我的个人中心默认',
+        },
+      ],
+      queryParams: {},
+      description: 'QQ浏览器我的页面',
+    },
+    {
+      path: '/article/:id',
+      component: 'ArticleDetailPage',
+      params: { id: 'string' },
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'article-detail', direction: 'vertical', description: '网页正文与评论区' },
+      ],
+      uiStates: [
+        {
+          id: 'article.detail.base',
+          search: {},
+          description: '网页正文详情默认',
+          actions: [
+            {
+              id: 'article.bookmark.toggle',
+              label: '收藏或取消收藏网页书签',
+              behavior: 'toggle',
+              paramsSchema: { articleId: 'string', to: 'boolean' },
+            },
+            {
+              id: 'article.like.toggle',
+              label: '点赞或取消点赞网页正文',
+              behavior: 'toggle',
+              paramsSchema: { articleId: 'string', to: 'boolean' },
+            },
+            {
+              id: 'article.comment.input.change',
+              label: '输入网页评论内容',
+              behavior: 'input',
+              paramsSchema: { value: 'string' },
+            },
+            {
+              id: 'article.comment.submit',
+              label: '发布网页评论',
+              behavior: 'submit',
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: '网页与热榜文章详情页',
+    },
+    {
+      path: '/search',
+      component: 'SearchPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'search-results', direction: 'vertical', description: '全网搜索与热榜结果列表' },
+      ],
+      uiStates: [
+        {
+          id: 'search.base',
+          search: {},
+          description: '全网搜索默认页',
+          actions: [
+            {
+              id: 'search.input.change',
+              label: '输入全网搜索关键词',
+              behavior: 'input',
+              paramsSchema: { value: 'string' },
+            },
+            {
+              id: 'search.history.clear',
+              label: '清空历史搜索记录',
+              behavior: 'other',
+            },
+          ],
+        },
+      ],
+      queryParams: { q: 'string' },
+      description: '全网搜索页',
+    },
+  ],
+  transitions: [
+    {
+      id: 'tab.feed',
+      from: ['/', '/novel', '/files', '/me'],
+      to: '/feed',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到推荐',
+      ui: { placement: 'tabbar', icon: 'feed', gesture: 'tap' },
+    },
+    {
+      id: 'tab.novel',
+      from: ['/', '/feed', '/files', '/me'],
+      to: '/novel',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到小说',
+      ui: { placement: 'tabbar', icon: 'novel', gesture: 'tap' },
+    },
+    {
+      id: 'tab.home',
+      from: ['/feed', '/novel', '/files', '/me'],
+      to: '/',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到首页',
+      ui: { placement: 'tabbar', icon: 'home', gesture: 'tap' },
+    },
+    {
+      id: 'tab.files',
+      from: ['/', '/feed', '/novel', '/me'],
+      to: '/files',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到文件',
+      ui: { placement: 'tabbar', icon: 'files', gesture: 'tap' },
+    },
+    {
+      id: 'tab.me',
+      from: ['/', '/feed', '/novel', '/files'],
+      to: '/me',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到我的',
+      ui: { placement: 'tabbar', icon: 'me', gesture: 'tap' },
+    },
+    {
+      id: 'home.search.open',
+      from: '/',
+      to: '/search',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '打开全网搜索页',
+      ui: { placement: 'topbar', icon: 'search', gesture: 'tap' },
+    },
+    {
+      id: 'home.article.open',
+      from: ['/', '/feed', '/novel', '/me', '/search'],
+      to: '/article/:id',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: { id: 'string' },
+      label: '打开网页正文详情',
+      ui: { placement: 'content', icon: 'article', gesture: 'tap' },
+      dataSource: { ref: 'articles', paramMapping: { id: 'id' }, labelField: 'title' },
+    },
+    {
+      id: 'feed.channel.switch',
+      from: '/feed',
+      to: '/feed',
+      search: {},
+      searchParams: { channel: 'string' },
+      mode: 'replace',
+      params: {},
+      label: '切换推荐频道分类',
+      ui: { placement: 'topbar', icon: 'channel', gesture: 'tap' },
+    },
+    {
+      id: 'search.submit',
+      from: '/search',
+      to: '/search',
+      search: {},
+      searchParams: { q: 'string' },
+      mode: 'replace',
+      params: {},
+      label: '执行全网搜索',
+      ui: { placement: 'topbar', icon: 'search', gesture: 'tap' },
+    },
+  ],
+  capabilities: {
+    historyBack: true,
+  },
+} as const satisfies NavigationDeclaration;
+
+export type TransitionId = (typeof NAVIGATION_DECLARATION.transitions)[number]['id'];

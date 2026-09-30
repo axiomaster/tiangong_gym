@@ -1,0 +1,12 @@
+{
+  "bundle_name": "com.tencent.mtthm",
+  "page_url": "pages/Index",
+  "viewport": {
+    "width": 1080.0,
+    "height": 2444.0
+  },
+  "resolution": 3.125,
+  "generated_at": "2026-09-30T01:47:57+00:00",
+  "source": "reference/data/qqbrowser/pageInfo.json",
+  "assets": 21
+}

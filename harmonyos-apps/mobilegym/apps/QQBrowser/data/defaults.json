@@ -1,0 +1,203 @@
+{
+  "user": {
+    "nickname": "企鹅极速冲浪者",
+    "qqAccount": "QQ_84920188",
+    "cloudUsedText": "12.4 GB / 100 GB",
+    "openTabsCount": 1,
+    "historyCount": 36,
+    "downloadsCount": 8
+  },
+  "searchHotKeywords": [
+    "DeepSeek 满血版在线体验",
+    "HarmonyOS NEXT 原生应用适配名单",
+    "深圳今日天气 29° 多云转晴",
+    "搜狗搜索 2026 国庆出行全攻略",
+    "近期热搜高分好剧榜 TOP10",
+    "AI 智能文档总结与 PDF 转换"
+  ],
+  "articles": [
+    {
+      "id": "art_deepseek_r1",
+      "title": "QBot 接入 DeepSeek 满血版专线：全网搜索与长文深度推理全面提速",
+      "source": "腾讯科技前沿",
+      "timeText": "12分钟前",
+      "category": "tech",
+      "summary": "QQ浏览器 QBot 智能助手现已全面支持 DeepSeek-R1 深度思考模式，结合全网实时网页检索与学术信源，一键生成结构化分析。",
+      "content": [
+        "在最新发布的 HarmonyOS 原生版 QQ浏览器中，中心搜索框与 QBot 智能助手迎来了深度升级。用户只需点击首页 QBot 标志或 DeepSeek 快捷入口，即可零门槛调用满血版深度推理模型。",
+        "与传统网页搜索相比，QBot 不仅能够实时聚合搜狗搜索、权威媒体与专业百科页面，还能针对复杂问题展开多步逻辑推演，自动过滤广告与低质信息。",
+        "此外，配合内置的『文件』与云盘工具，用户可直接将 PDF 报告、Word 文档投喂给 QBot，3 秒提炼全文核心要点并支持一键导出书签笔记。"
+      ],
+      "readCountText": "186.4万阅读",
+      "likes": 4280,
+      "liked": false,
+      "bookmarked": true,
+      "hotRank": 1,
+      "comments": [
+        {
+          "id": "c_1",
+          "user": "深圳南山极客",
+          "text": "首页直接点 DeepSeek 图标就能进，响应速度非常快，查资料太省心了！",
+          "timeText": "5分钟前"
+        },
+        {
+          "id": "c_2",
+          "user": "鸿蒙原生体验官",
+          "text": "界面特别清爽，没有多余弹窗，QBot 总结长网页太好用了。",
+          "timeText": "9分钟前"
+        }
+      ]
+    },
+    {
+      "id": "art_harmony_next",
+      "title": "HarmonyOS 原生浏览器极速内核揭秘：帧率稳定 120Hz，内存占用降低 30%",
+      "source": "极客评测室",
+      "timeText": "35分钟前",
+      "category": "hot",
+      "summary": "依托鸿蒙方舟引擎与自研渲染管线，新版浏览器在多标签并发切换、高清视频播放与大文件预览场景下实现丝滑流畅体验。",
+      "content": [
+        "随着 HarmonyOS 原生应用生态不断完善，浏览器作为高频全能入口，在启动速度与页面渲染性能上实现了质的飞跃。",
+        "实测显示，在同时开启 10 个包含高清图文的复杂网页标签时，应用内存占用较上一代降低约 30%，滑动帧率稳定保持在满帧水平。",
+        "无论是刷推荐热榜、追连载小说，还是在线解压查看数百兆的办公文档，都能获得媲美本地原生工具的极速响应。"
+      ],
+      "readCountText": "142.1万阅读",
+      "likes": 3150,
+      "liked": true,
+      "bookmarked": false,
+      "hotRank": 2,
+      "comments": [
+        {
+          "id": "c_3",
+          "user": "数码发烧友阿杰",
+          "text": "多窗口切换非常丝滑，底部五个核心栏目的布局也很顺手。",
+          "timeText": "20分钟前"
+        }
+      ]
+    },
+    {
+      "id": "art_drama_hot",
+      "title": "2026秋季热搜好剧口碑榜出炉：悬疑剧《暗夜微光》连续七天霸榜第一",
+      "source": "全网影视风向标",
+      "timeText": "1小时前",
+      "category": "video",
+      "summary": "本周『热搜好剧』频道播放量突破 5 亿人次，多部高分现实题材与古装悬疑剧集引发全网热议，支持蓝光倍速与投屏播放。",
+      "content": [
+        "根据 QQ浏览器视频与热搜好剧频道最新统计，年度悬疑剧《暗夜微光》凭借紧凑的叙事节奏与全员在线的演技，开播首周即斩获 9.1 高分。",
+        "用户通过首页『视频』或『热搜好剧』快捷工具即可直达剧集专区，查看分集剧情解析、无损原声带以及主创独家幕后花絮。",
+        "同时支持一键加入书签收藏与离线缓存至本地文件，通勤路上无惧网络波动。"
+      ],
+      "readCountText": "98.7万阅读",
+      "likes": 2640,
+      "liked": false,
+      "bookmarked": false,
+      "hotRank": 3,
+      "comments": [
+        {
+          "id": "c_4",
+          "user": "追剧小能手",
+          "text": "第四集反转太绝了，在浏览器里直接看高清解说超方便。",
+          "timeText": "42分钟前"
+        }
+      ]
+    },
+    {
+      "id": "art_shenzhen_weather",
+      "title": "深圳今日气温 29° 多云间晴：海风舒爽宜出行，周末迎来黄金海岸艺术展",
+      "source": "大湾区生活指南",
+      "timeText": "2小时前",
+      "category": "hot",
+      "summary": "深圳湾与前海片区今日空气质量优，傍晚体感温度约 26°，适合户外慢跑与看展拍照，附全市热门打卡路线汇总。",
+      "content": [
+        "据深圳市气象台实时监测，今日全市多云间晴，最高气温 29°，微风习习，紫外线指数中等。",
+        "本周末深圳湾公园、华侨城创意园及南头古城将联合举办多场免费公共艺术展与露天音乐会，市民可搭乘地铁直达。",
+        "出行前不妨把本篇攻略加入『书签收藏』，随时查看场馆开放时间与交通接驳提示。"
+      ],
+      "readCountText": "65.2万阅读",
+      "likes": 1890,
+      "liked": false,
+      "bookmarked": true,
+      "hotRank": 4,
+      "comments": []
+    }
+  ],
+  "novels": [
+    {
+      "id": "novel_1",
+      "title": "长安十二时辰：瀚海迷踪",
+      "author": "月冷星河",
+      "category": "历史悬疑",
+      "score": "9.6分",
+      "latestChapter": "第342章 密诏现世",
+      "progressText": "已读 78%",
+      "inBookshelf": true,
+      "linkedArticleId": "art_drama_hot"
+    },
+    {
+      "id": "novel_2",
+      "title": "深空彼岸：量子纪元",
+      "author": "辰东星辰",
+      "category": "硬核科幻",
+      "score": "9.5分",
+      "latestChapter": "第518章 跃迁奇点",
+      "progressText": "已读 45%",
+      "inBookshelf": true,
+      "linkedArticleId": "art_deepseek_r1"
+    },
+    {
+      "id": "novel_3",
+      "title": "凡人修仙之沧海月明",
+      "author": "忘语清风",
+      "category": "仙侠奇缘",
+      "score": "9.4分",
+      "latestChapter": "第890章 九天剑阵",
+      "progressText": "未读",
+      "inBookshelf": false,
+      "linkedArticleId": "art_harmony_next"
+    },
+    {
+      "id": "novel_4",
+      "title": "大湾区创业风云录",
+      "author": "南山观潮",
+      "category": "都市商战",
+      "score": "9.3分",
+      "latestChapter": "第215章 破局之战",
+      "progressText": "已读 12%",
+      "inBookshelf": false,
+      "linkedArticleId": "art_shenzhen_weather"
+    }
+  ],
+  "files": [
+    {
+      "id": "file_1",
+      "name": "HarmonyOS_NEXT_应用架构设计白皮书.pdf",
+      "sizeText": "14.8 MB",
+      "timeText": "今天 09:30",
+      "type": "doc",
+      "starred": true
+    },
+    {
+      "id": "file_2",
+      "name": "DeepSeek_R1_本地部署与提示词手册.docx",
+      "sizeText": "3.2 MB",
+      "timeText": "昨天 18:15",
+      "type": "doc",
+      "starred": true
+    },
+    {
+      "id": "file_3",
+      "name": "深圳湾日落延时摄影_4K_HDR.mp4",
+      "sizeText": "248.5 MB",
+      "timeText": "09-28",
+      "type": "media",
+      "starred": false
+    },
+    {
+      "id": "file_4",
+      "name": "2026_Q3_产品路线图汇总表.xlsx",
+      "sizeText": "1.6 MB",
+      "timeText": "09-25",
+      "type": "doc",
+      "starred": false
+    }
+  ]
+}

@@ -161,6 +161,14 @@
       height: 2848px;
       border: none;
     }
+    .phone-frame-wrapper.vp-1080,
+    .phone-frame-wrapper.vp-1080 iframe {
+      width: 1080px;
+      height: 2444px;
+    }
+    .phone-frame-wrapper.vp-1080 {
+      transform: scale(0.352);
+    }
   </style>
 </head>
 <body>
@@ -175,6 +183,10 @@
       <button class="tab-btn" onclick="showApp('vmall')">仅看华为商城</button>
       <button class="tab-btn" onclick="showApp('taobao')">仅看淘宝</button>
       <button class="tab-btn" onclick="showApp('douyin')">仅看抖音</button>
+      <button class="tab-btn" onclick="showApp('pinduoduo')">仅看拼多多</button>
+      <button class="tab-btn" onclick="showApp('meituan')">仅看美团</button>
+      <button class="tab-btn" onclick="showApp('qqbrowser')">仅看QQ浏览器</button>
+      <button class="tab-btn" onclick="showApp('baidunetdisk')">仅看百度网盘</button>
     </div>
   </header>
 
@@ -246,11 +258,79 @@
         </div>
       </div>
     </div>
+
+    <!-- 拼多多 -->
+    <div class="app-card" id="card-pinduoduo">
+      <div class="card-header">
+        <div class="app-info">
+          <h2>拼多多 (Pinduoduo)</h2>
+          <div class="meta">包名: com.xunmeng.pinduoduo.hos · 1080×2444</div>
+        </div>
+        <a class="open-link" href="com.xunmeng.pinduoduo.hos/index.html" target="_blank">全屏打开 ↗</a>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-frame-wrapper vp-1080">
+          <iframe src="com.xunmeng.pinduoduo.hos/index.html" title="拼多多虚拟应用"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 美团 -->
+    <div class="app-card" id="card-meituan">
+      <div class="card-header">
+        <div class="app-info">
+          <h2>美团 (Meituan)</h2>
+          <div class="meta">包名: com.sankuai.hmeituan · 1080×2444</div>
+        </div>
+        <a class="open-link" href="com.sankuai.hmeituan/index.html" target="_blank">全屏打开 ↗</a>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-frame-wrapper vp-1080">
+          <iframe src="com.sankuai.hmeituan/index.html" title="美团虚拟应用"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- QQ浏览器 -->
+    <div class="app-card" id="card-qqbrowser">
+      <div class="card-header">
+        <div class="app-info">
+          <h2>QQ浏览器 (QQBrowser)</h2>
+          <div class="meta">包名: com.tencent.mtthm · 1080×2444</div>
+        </div>
+        <a class="open-link" href="com.tencent.mtthm/index.html" target="_blank">全屏打开 ↗</a>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-frame-wrapper vp-1080">
+          <iframe src="com.tencent.mtthm/index.html" title="QQ浏览器虚拟应用"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 百度网盘 -->
+    <div class="app-card" id="card-baidunetdisk">
+      <div class="card-header">
+        <div class="app-info">
+          <h2>百度网盘 (BaiduNetdisk)</h2>
+          <div class="meta">包名: com.baidu.netdisk.hmos · 1080×2444</div>
+        </div>
+        <a class="open-link" href="com.baidu.netdisk.hmos/index.html" target="_blank">全屏打开 ↗</a>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-frame-wrapper vp-1080">
+          <iframe src="com.baidu.netdisk.hmos/index.html" title="百度网盘虚拟应用"></iframe>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script>
-    var APPS = ['vmall', 'xhs', 'taobao', 'douyin'];
-    var TAB_ORDER = ['all', 'xhs', 'vmall', 'taobao', 'douyin'];
+    var APPS = ['vmall', 'xhs', 'taobao', 'douyin', 'pinduoduo', 'meituan', 'qqbrowser', 'baidunetdisk'];
+    var TAB_ORDER = ['all', 'xhs', 'vmall', 'taobao', 'douyin', 'pinduoduo', 'meituan', 'qqbrowser', 'baidunetdisk'];
     function showAll() {
       APPS.forEach(function(k) {
         document.getElementById('card-' + k).style.display = 'flex';

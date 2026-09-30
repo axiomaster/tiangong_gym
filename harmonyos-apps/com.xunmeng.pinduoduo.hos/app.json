@@ -1,0 +1,12 @@
+{
+  "bundle_name": "com.xunmeng.pinduoduo.hos",
+  "page_url": "pages/splash",
+  "viewport": {
+    "width": 1080.0,
+    "height": 2444.0
+  },
+  "resolution": 3.125,
+  "generated_at": "2026-09-30T01:30:19+00:00",
+  "source": "reference/data/pinduoduo/pageInfo.json",
+  "assets": 38
+}

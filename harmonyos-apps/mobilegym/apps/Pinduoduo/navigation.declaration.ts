@@ -1,0 +1,323 @@
+import { NavigationDeclaration } from './navigation.types';
+
+export const NAVIGATION_DECLARATION = {
+  app: 'pinduoduo',
+  routes: [
+    {
+      path: '/',
+      component: 'HomePage',
+      params: {},
+      entryPoint: 'home',
+      scrollContainers: [
+        { name: 'home-feed', direction: 'vertical', description: '拼多多首页推荐商品与百亿补贴流' },
+        { name: 'home-channels', direction: 'horizontal', description: '首页顶部频道栏' },
+      ],
+      uiStates: [
+        {
+          id: 'home.base',
+          search: {},
+          description: '拼多多推荐首页',
+          actions: [
+            {
+              id: 'home.pxq.view',
+              label: '查看拼小圈好友动态',
+              behavior: 'other',
+            },
+          ],
+        },
+      ],
+      queryParams: { channel: 'string' },
+      description: '拼多多首页',
+    },
+    {
+      path: '/video',
+      component: 'VideoPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'video-feed', direction: 'vertical', description: '多多视频内容流' },
+      ],
+      uiStates: [
+        {
+          id: 'video.base',
+          search: {},
+          description: '多多视频页默认',
+          actions: [
+            {
+              id: 'video.item.like.toggle',
+              label: '点赞或取消点赞视频',
+              behavior: 'toggle',
+              scope: 'item',
+              paramsSchema: { videoId: 'string', to: 'boolean' },
+            },
+            {
+              id: 'video.item.follow.toggle',
+              label: '关注或取消关注主播',
+              behavior: 'toggle',
+              scope: 'item',
+              paramsSchema: { videoId: 'string', to: 'boolean' },
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: '多多视频页',
+    },
+    {
+      path: '/promo',
+      component: 'PromoPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'promo-list', direction: 'vertical', description: '国庆立减百亿补贴专场列表' },
+      ],
+      uiStates: [
+        {
+          id: 'promo.base',
+          search: {},
+          description: '国庆立减活动会场默认',
+          actions: [
+            {
+              id: 'promo.coupon.claim',
+              label: '领取国庆立减百亿补贴神券',
+              behavior: 'submit',
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: '国庆立减页',
+    },
+    {
+      path: '/chat',
+      component: 'ChatPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'chat-list', direction: 'vertical', description: '商家与官方聊天通知列表' },
+      ],
+      uiStates: [
+        {
+          id: 'chat.base',
+          search: {},
+          description: '聊天消息页默认',
+          actions: [
+            {
+              id: 'chat.all.read',
+              label: '全部会话标为已读',
+              behavior: 'other',
+            },
+            {
+              id: 'chat.item.read',
+              label: '查看并标记单条聊天已读',
+              behavior: 'other',
+              scope: 'item',
+              paramsSchema: { id: 'string' },
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: '拼多多聊天页',
+    },
+    {
+      path: '/me',
+      component: 'MePage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'me-main', direction: 'vertical', description: '拼多多个人中心' },
+      ],
+      uiStates: [
+        {
+          id: 'me.base',
+          search: {},
+          description: '个人中心默认',
+        },
+      ],
+      queryParams: {},
+      description: '个人中心',
+    },
+    {
+      path: '/product/:id',
+      component: 'ProductDetailPage',
+      params: { id: 'string' },
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'product-detail', direction: 'vertical', description: '商品拼单详情内容' },
+      ],
+      uiStates: [
+        {
+          id: 'product.detail.base',
+          search: {},
+          description: '商品详情默认',
+          actions: [
+            {
+              id: 'product.favorite.toggle',
+              label: '收藏或取消收藏商品',
+              behavior: 'toggle',
+              paramsSchema: { productId: 'string', to: 'boolean' },
+            },
+            {
+              id: 'product.groupbuy.join',
+              label: '发起拼单购买商品',
+              behavior: 'submit',
+              paramsSchema: { productId: 'string' },
+            },
+          ],
+        },
+      ],
+      queryParams: {},
+      description: '商品详情页',
+    },
+    {
+      path: '/search',
+      component: 'SearchPage',
+      params: {},
+      entryPoint: 'none',
+      scrollContainers: [
+        { name: 'search-results', direction: 'vertical', description: '搜索结果列表' },
+      ],
+      uiStates: [
+        {
+          id: 'search.base',
+          search: {},
+          description: '搜索默认页',
+          actions: [
+            {
+              id: 'search.input.change',
+              label: '输入搜索关键词',
+              behavior: 'input',
+              paramsSchema: { value: 'string' },
+            },
+            {
+              id: 'search.history.clear',
+              label: '清空历史搜索',
+              behavior: 'other',
+            },
+          ],
+        },
+      ],
+      queryParams: { q: 'string' },
+      description: '商品搜索页',
+    },
+  ],
+  transitions: [
+    {
+      id: 'tab.home',
+      from: ['/video', '/promo', '/chat', '/me'],
+      to: '/',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到首页',
+      ui: { placement: 'tabbar', icon: 'home', gesture: 'tap' },
+    },
+    {
+      id: 'tab.video',
+      from: ['/', '/promo', '/chat', '/me'],
+      to: '/video',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到多多视频',
+      ui: { placement: 'tabbar', icon: 'video', gesture: 'tap' },
+    },
+    {
+      id: 'tab.promo',
+      from: ['/', '/video', '/chat', '/me'],
+      to: '/promo',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到国庆立减',
+      ui: { placement: 'tabbar', icon: 'promo', gesture: 'tap' },
+    },
+    {
+      id: 'tab.chat',
+      from: ['/', '/video', '/promo', '/me'],
+      to: '/chat',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到聊天',
+      ui: { placement: 'tabbar', icon: 'chat', gesture: 'tap' },
+    },
+    {
+      id: 'tab.me',
+      from: ['/', '/video', '/promo', '/chat'],
+      to: '/me',
+      search: {},
+      searchParams: {},
+      mode: 'replace',
+      params: {},
+      label: '切换到个人中心',
+      ui: { placement: 'tabbar', icon: 'me', gesture: 'tap' },
+    },
+    {
+      id: 'home.channel.switch',
+      from: '/',
+      to: '/',
+      search: {},
+      searchParams: { channel: 'string' },
+      mode: 'replace',
+      params: {},
+      label: '切换首页顶部频道',
+      ui: { placement: 'topbar', icon: 'channel', gesture: 'tap' },
+    },
+    {
+      id: 'home.search.open',
+      from: '/',
+      to: '/search',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '打开搜索页',
+      ui: { placement: 'topbar', icon: 'search', gesture: 'tap' },
+    },
+    {
+      id: 'home.product.open',
+      from: ['/', '/video', '/promo', '/me', '/search'],
+      to: '/product/:id',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: { id: 'string' },
+      label: '打开商品拼单详情',
+      ui: { placement: 'content', icon: 'product', gesture: 'tap' },
+      dataSource: { ref: 'products', paramMapping: { id: 'id' }, labelField: 'title' },
+    },
+    {
+      id: 'search.submit',
+      from: '/search',
+      to: '/search',
+      search: {},
+      searchParams: { q: 'string' },
+      mode: 'replace',
+      params: {},
+      label: '执行商品搜索',
+      ui: { placement: 'topbar', icon: 'search', gesture: 'tap' },
+    },
+    {
+      id: 'product.me.open',
+      from: '/product/:id',
+      to: '/me',
+      search: {},
+      searchParams: {},
+      mode: 'push',
+      params: {},
+      label: '从详情页前往个人中心查看拼单',
+      ui: { placement: 'content', icon: 'me', gesture: 'tap' },
+    },
+  ],
+  capabilities: {
+    historyBack: true,
+  },
+} as const satisfies NavigationDeclaration;
+
+export type TransitionId = (typeof NAVIGATION_DECLARATION.transitions)[number]['id'];

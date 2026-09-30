@@ -57,8 +57,11 @@ def _is_compound_container(
     return False
 
 
-def _encloses_text(rect: tuple[float, float, float, float], page: PageInfo) -> bool:
+def _encloses_text(node_id: int, rect: tuple[float, float, float, float], page: PageInfo) -> bool:
     for other in page.iter_nodes():
+        other_id = other.get("$ID")
+        if other_id is not None and int(other_id) == node_id:
+            continue
         if other.get("$type") == "Text":
             r = parse_rect(other.get("$rect"))
             if r and rect[0] <= r[0] and rect[1] <= r[1] and rect[2] >= r[2] and rect[3] >= r[3]:
@@ -68,7 +71,8 @@ def _encloses_text(rect: tuple[float, float, float, float], page: PageInfo) -> b
 
 def collect_image_nodes(page: PageInfo) -> list[tuple[int, tuple[float, float, float, float]]]:
     """Find (id, rect) for every node that renders an image: `$type == "Image"`,
-    `XComponent` video surfaces, or any node with a resource-bearing backgroundImage."""
+    `XComponent` video surfaces, custom-drawn C-API leaf nodes, or any node with
+    a resource-bearing backgroundImage."""
     found: list[tuple[int, tuple[float, float, float, float]]] = []
     seen: set[int] = set()
     for node in page.iter_nodes():
@@ -80,14 +84,21 @@ def collect_image_nodes(page: PageInfo) -> list[tuple[int, tuple[float, float, f
             continue
         attrs = node.get("$attrs") or {}
         node_type = node.get("$type")
-        is_surface = node_type == "XComponent"
+        is_empty_scroll = node_type == "Scroll" and not node.get("$children")
+        is_custom_text = (
+            node_type == "Text"
+            and not str(attrs.get("content") or "").strip()
+            and not node.get("$children")
+            and "actualFontSize" in attrs
+        )
+        is_surface = node_type == "XComponent" or is_empty_scroll or is_custom_text
         if node_type != "Image" and not is_surface and not _has_background_image(attrs):
             continue
         rect = parse_rect(node.get("$rect"))
         if rect is None:
             continue
         if is_surface:
-            if _encloses_text(rect, page):
+            if _encloses_text(node_id, rect, page):
                 continue
         elif _is_compound_container(node_id, rect, page):
             continue

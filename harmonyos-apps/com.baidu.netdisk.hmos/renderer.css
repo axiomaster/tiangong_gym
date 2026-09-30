@@ -1,0 +1,33 @@
+/* ArkUI -> DOM mapping for the Path-B runtime renderer (arch.md §5.1).
+ *
+ * Coordinates: every node carries the exact rect recorded on the real device
+ * (physical px), so nodes are absolutely positioned inside a fixed stage —
+ * this replays device geometry directly instead of re-deriving it with flex,
+ * which is what keeps geometry IoU against the device high.
+ *
+ * DOM contract consumed by the Gym cleaner / Verifier:
+ *   [data-component-id]  — spec node id on every rendered node
+ *   [data-node-type]     — ArkUI type (Text / Image / Stack / ...)
+ *   window.__SPEC_RENDERED__ = true when the tree is fully mounted
+ */
+
+.ark-stage {
+  position: relative;
+  overflow: hidden;
+  font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", -apple-system, "PingFang SC", "Noto Sans CJK SC", sans-serif;
+}
+
+.ark-node {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+img.ark-node {
+  object-fit: fill; /* crops come from the exact recorded rect -> stretch == pixel-faithful */
+}
+
+.ark-text {
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

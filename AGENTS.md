@@ -6,8 +6,8 @@ HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It 
 
 - `docs/arch.md` (Chinese) is the authoritative design spec — read it before writing code.
 - Python + Pydantic toolchain in `src/` (`schema/`, `collector/`, `cleaner/`, `synthesizer/`, `verifier/`); renderer is no-build vanilla JS.
-- **Progress: M1–M4 all implemented and tested (75 pytest, ruff clean). M3 = `cleaner/gym_cleaner.py` (Playwright DOM scrape → cue_data) + `verifier/` (metrics + diff_engine gates). M4 = `synthesizer/injector.py` (slot templatization → dataset variants → batch collection). React path (Path A): VMall, Taobao, and Douyin apps in `reference/mobilegym/apps/{VMall,Taobao,Douyin}/` are fully contract-instrumented (`build_nav_artifacts.mjs` green in schema + data mode), mirrored to `harmonyos-apps/mobilegym/` for commit. Not built yet: list-item replication (增减列表项), cue schema `functions`/`group` auto-annotation, bench_env task suite for VMall/Taobao/Douyin.**
-- Real-device closed loop (vmall, taobao, douyin home) passes ALL verifier gates at 100% (component match / IoU / text / actions). `TabContent` parity rule: empty (inactive) tab panels are excluded on BOTH sides — renderer hides them, device_cleaner skips them.
+- **Progress: M1–M4 all implemented and tested (83 pytest, ruff clean). M3 = `cleaner/gym_cleaner.py` (Playwright DOM scrape → cue_data) + `verifier/` (metrics + diff_engine gates). M4 = `synthesizer/injector.py` (slot templatization → dataset variants → batch collection). React path (Path A): VMall, Taobao, Douyin, Pinduoduo, Meituan, QQBrowser, and BaiduNetdisk apps in `reference/mobilegym/apps/{VMall,Taobao,Douyin,Pinduoduo,Meituan,QQBrowser,BaiduNetdisk}/` are fully contract-instrumented (`build_nav_artifacts.mjs` green in schema + data mode), mirrored to `harmonyos-apps/mobilegym/` for commit. Not built yet: list-item replication (增减列表项), cue schema `functions`/`group` auto-annotation, bench_env task suite.**
+- Real-device closed loop (vmall, taobao, douyin, pinduoduo, meituan, qqbrowser, baidunetdisk home) passes ALL verifier gates at 100% (component match / IoU / text / actions). `TabContent` parity rule: empty (inactive) tab panels are excluded on BOTH sides — renderer hides them, device_cleaner skips them.
 
 ## Data direction (do not get backwards)
 
@@ -50,7 +50,7 @@ HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It 
 
 ## `harmonyos-apps/` — generated virtual app bundles (M2, done)
 
-- `uv run python -m synthesizer.packager <pageInfo.json> -s <screenshot> -o harmonyos-apps` writes one self-contained bundle per app: `app.json`, `spec.json`, `index.html` + `renderer.js`/`renderer.css`, `assets/images/<id>.png`. Bundles exist for `com.xingin.xhs_hos`, `com.huawei.hmos.vmall`, `com.taobao.taobao4hmos`, and `com.ss.hm.ugc.aweme`.
+- `uv run python -m synthesizer.packager <pageInfo.json> -s <screenshot> -o harmonyos-apps` writes one self-contained bundle per app: `app.json`, `spec.json`, `index.html` + `renderer.js`/`renderer.css`, `assets/images/<id>.png`. Bundles exist for `com.xingin.xhs_hos`, `com.huawei.hmos.vmall`, `com.taobao.taobao4hmos`, `com.ss.hm.ugc.aweme`, `com.xunmeng.pinduoduo.hos`, `com.sankuai.hmeituan`, `com.tencent.mtthm`, and `com.baidu.netdisk.hmos`.
 - Root `harmonyos-apps/index.html` is a **launcher** (phone mockups + iframes): serve `harmonyos-apps/` itself (`python -m http.server`), not a bundle dir, to use it. `file://` fetch of spec.json fails — always serve over HTTP.
 - Renderer (`renderSpec(spec, mount)` pure function, physical-px stage, fontSize fp × resolution → px, #AARRGGBB → #RRGGBBAA): nodes are positioned **relative to their parent rect** (scroll containers have their own coordinate space), empty `TabContent` nodes are hidden, and crops whose rect strictly encloses ≥2 Text/Image nodes are skipped by the cropper to avoid ghost duplication. DOM contract for the Gym cleaner: `[data-component-id]`, `[data-node-type]`, `window.__SPEC_RENDERED__`.
 - Browser tests: `uv run pytest tests/test_renderer_integration.py`.
@@ -64,7 +64,11 @@ HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It 
 | `apps/VMall/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/VMall/` |
 | `apps/Taobao/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/Taobao/` |
 | `apps/Douyin/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/Douyin/` |
-| `os/launcher/defaults.json` (pins `vmall`, `taobao`, `douyin` on launcher screen1) | `harmonyos-apps/mobilegym/os/launcher/defaults.json` |
+| `apps/Pinduoduo/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/Pinduoduo/` |
+| `apps/Meituan/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/Meituan/` |
+| `apps/QQBrowser/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/QQBrowser/` |
+| `apps/BaiduNetdisk/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/BaiduNetdisk/` |
+| `os/launcher/defaults.json` (pins `vmall`, `taobao`, `douyin`, `pinduoduo`, `meituan`, `qqbrowser`, `baidunetdisk` on launcher screen1) | `harmonyos-apps/mobilegym/os/launcher/defaults.json` |
 | `os/launcher/types.ts` (`LAUNCHER_LAYOUT_VERSION` bump) | `harmonyos-apps/mobilegym/os/launcher/types.ts` |
 
 Update loop: edit in `reference/mobilegym` → `node scripts/build_nav_artifacts.mjs <AppName> --data data/index.ts` must pass with no ERROR/WARN → re-copy the paths above → commit this repo. The generated `public/<app>_*` nav-graph/task artifacts are gitignored on the mobilegym side and are **not** mirrored.

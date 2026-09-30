@@ -77,42 +77,42 @@
     ],
     "pinnedApps": [
       {
-        "appId": "calculator",
+        "appId": "settings",
         "cellX": 0,
-        "cellY": 4
-      },
-      {
-        "appId": "compass",
-        "cellX": 1,
-        "cellY": 4
-      },
-      {
-        "appId": "notes",
-        "cellX": 2,
         "cellY": 4
       },
       {
         "appId": "vmall",
-        "cellX": 3,
-        "cellY": 4
-      },
-      {
-        "appId": "settings",
-        "cellX": 0,
-        "cellY": 5
-      },
-      {
-        "appId": "gallery",
         "cellX": 1,
-        "cellY": 5
+        "cellY": 4
       },
       {
         "appId": "taobao",
         "cellX": 2,
-        "cellY": 5
+        "cellY": 4
       },
       {
         "appId": "douyin",
+        "cellX": 3,
+        "cellY": 4
+      },
+      {
+        "appId": "pinduoduo",
+        "cellX": 0,
+        "cellY": 5
+      },
+      {
+        "appId": "meituan",
+        "cellX": 1,
+        "cellY": 5
+      },
+      {
+        "appId": "qqbrowser",
+        "cellX": 2,
+        "cellY": 5
+      },
+      {
+        "appId": "baidunetdisk",
         "cellX": 3,
         "cellY": 5
       }

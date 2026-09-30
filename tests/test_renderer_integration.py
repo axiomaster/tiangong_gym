@@ -173,3 +173,92 @@ def test_douyin_app_renders(page, tmp_path):
         page.screenshot(path=str(shot), full_page=True)
         assert shot.stat().st_size > 10_000
 
+
+@pytest.mark.skipif(
+    not Path("harmonyos-apps/com.xunmeng.pinduoduo.hos/spec.json").exists(),
+    reason="pinduoduo virtual app not packaged yet",
+)
+def test_pinduoduo_app_renders(page, tmp_path):
+    bundle = Path("harmonyos-apps/com.xunmeng.pinduoduo.hos")
+    spec = json.loads((bundle / "spec.json").read_text(encoding="utf-8"))
+
+    with serve_dir(bundle) as base:
+        load_app(page, base + "/index.html")
+
+        n_dom = page.locator("[data-component-id]").count()
+        assert n_dom == count_spec_nodes(spec["root"])
+
+        rendered_text = page.evaluate("() => document.body.innerText")
+        assert "推荐" in rendered_text
+        assert "百亿补贴" in rendered_text or "首页" in rendered_text
+
+        shot = tmp_path / "pinduoduo_render.png"
+        page.screenshot(path=str(shot), full_page=True)
+        assert shot.stat().st_size > 10_000
+
+
+@pytest.mark.skipif(
+    not Path("harmonyos-apps/com.sankuai.hmeituan/spec.json").exists(),
+    reason="meituan virtual app not packaged yet",
+)
+def test_meituan_app_renders(page, tmp_path):
+    bundle = Path("harmonyos-apps/com.sankuai.hmeituan")
+    spec = json.loads((bundle / "spec.json").read_text(encoding="utf-8"))
+
+    with serve_dir(bundle) as base:
+        load_app(page, base + "/index.html")
+
+        n_dom = page.locator("[data-component-id]").count()
+        assert n_dom == count_spec_nodes(spec["root"])
+
+        rendered_text = page.evaluate("() => document.body.innerText")
+        assert "外卖" in rendered_text
+        assert "团购" in rendered_text or "推荐" in rendered_text
+
+        shot = tmp_path / "meituan_render.png"
+        page.screenshot(path=str(shot), full_page=True)
+        assert shot.stat().st_size > 10_000
+
+
+@pytest.mark.skipif(
+    not Path("harmonyos-apps/com.tencent.mtthm/spec.json").exists(),
+    reason="qqbrowser virtual app not packaged yet",
+)
+def test_qqbrowser_app_renders(page, tmp_path):
+    bundle = Path("harmonyos-apps/com.tencent.mtthm")
+    spec = json.loads((bundle / "spec.json").read_text(encoding="utf-8"))
+
+    with serve_dir(bundle) as base:
+        load_app(page, base + "/index.html")
+
+        n_dom = page.locator("[data-component-id]").count()
+        assert n_dom == count_spec_nodes(spec["root"])
+
+        shot = tmp_path / "qqbrowser_render.png"
+        page.screenshot(path=str(shot), full_page=True)
+        assert shot.stat().st_size > 10_000
+
+
+@pytest.mark.skipif(
+    not Path("harmonyos-apps/com.baidu.netdisk.hmos/spec.json").exists(),
+    reason="baidunetdisk virtual app not packaged yet",
+)
+def test_baidunetdisk_app_renders(page, tmp_path):
+    bundle = Path("harmonyos-apps/com.baidu.netdisk.hmos")
+    spec = json.loads((bundle / "spec.json").read_text(encoding="utf-8"))
+
+    with serve_dir(bundle) as base:
+        load_app(page, base + "/index.html")
+
+        n_dom = page.locator("[data-component-id]").count()
+        assert n_dom == count_spec_nodes(spec["root"])
+
+        rendered_text = page.evaluate("() => document.body.innerText")
+        assert "相册" in rendered_text
+        assert "首页" in rendered_text or "文件" in rendered_text
+
+        shot = tmp_path / "baidunetdisk_render.png"
+        page.screenshot(path=str(shot), full_page=True)
+        assert shot.stat().st_size > 10_000
+
+

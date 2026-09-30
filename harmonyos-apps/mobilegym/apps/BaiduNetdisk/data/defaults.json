@@ -1,0 +1,166 @@
+{
+  "user": {
+    "nickname": "度盘SVIP_鸿蒙用户",
+    "account": "bd_netdisk_8829",
+    "vipLevel": "SVIP8 超级会员",
+    "usedSpaceText": "1.86 TB",
+    "totalSpaceText": "12 TB",
+    "usedPercent": 16,
+    "transferCount": 14,
+    "albumCount": 1248
+  },
+  "searchPlaceholder": "文件搜索",
+  "searchDiscover": [
+    "PP-OCRv5_server-onnx",
+    "猫meme 表情包图合集",
+    "H-黄Z中老师课程合集",
+    "西安市旅行回忆相册",
+    "深海摄影原片备份",
+    "扫描合同PDF归档"
+  ],
+  "files": [
+    {
+      "id": "file_cat_meme",
+      "title": "猫meme 表情包图合集",
+      "category": "recent",
+      "fileType": "link",
+      "tag": "链接",
+      "timeText": "03-24 23:14",
+      "subText": "电脑查看",
+      "sizeText": "346.8 MB",
+      "locationPath": "/来自：网页链接分享",
+      "starred": false,
+      "downloaded": false,
+      "description": "包含高清猫meme动图、静态表情包与短视频素材合集，支持一键转存至网盘相册。"
+    },
+    {
+      "id": "file_pp_ocr",
+      "title": "PP-OCRv5_server-onnx",
+      "category": "transfer",
+      "fileType": "folder",
+      "timeText": "2025-07-15",
+      "subText": "位置：我的资源",
+      "sizeText": "1.28 GB",
+      "locationPath": "/我的资源/PP-OCRv5_server-onnx",
+      "starred": true,
+      "downloaded": true,
+      "description": "PaddleOCR v5 服务端推理 ONNX 权重与配置文件目录，含检测、方向分类与识别模型。"
+    },
+    {
+      "id": "file_course_hz",
+      "title": "H-黄Z中老师课程合集",
+      "category": "transfer",
+      "fileType": "folder",
+      "timeText": "2025-01-19",
+      "subText": "位置：我的资源",
+      "sizeText": "18.6 GB",
+      "locationPath": "/我的资源/H-黄Z中老师课程合集",
+      "starred": false,
+      "downloaded": false,
+      "description": "完整讲义 PDF、课堂录音听记转写稿及配套高清视频课程合集。"
+    },
+    {
+      "id": "file_xian_album",
+      "title": "热气漫开时 一筷是暖意入骨",
+      "category": "album",
+      "fileType": "image",
+      "timeText": "2020.9.30",
+      "subText": "西安市 · 28张照片",
+      "sizeText": "194.2 MB",
+      "locationPath": "/来自：智能回忆相册/西安市",
+      "starred": true,
+      "downloaded": false,
+      "description": "2020年9月30日于西安市拍摄的美食与人间烟火智能精选回忆影集。"
+    },
+    {
+      "id": "file_ocean_album",
+      "title": "深蓝漩涡里，沉没成回声",
+      "category": "album",
+      "fileType": "image",
+      "timeText": "2014.9.11",
+      "subText": "深海摄影 · 15张照片",
+      "sizeText": "112.5 MB",
+      "locationPath": "/来自：智能回忆相册/深海摄影",
+      "starred": false,
+      "downloaded": false,
+      "description": "2014年9月11日收录的深海自由潜摄影原片与精修图合集。"
+    },
+    {
+      "id": "file_scan_doc",
+      "title": "鸿蒙原生应用架构设计笔记.pdf",
+      "category": "scan",
+      "fileType": "doc",
+      "timeText": "2025-08-12",
+      "subText": "位置：我的资源/文档扫描",
+      "sizeText": "24.5 MB",
+      "locationPath": "/我的资源/文档扫描",
+      "starred": false,
+      "downloaded": true,
+      "description": "智能扫描自动切边增强生成的超清 PDF 文档，已开启全文 OCR 检索。"
+    }
+  ],
+  "memories": [
+    {
+      "id": "mem_xian",
+      "title": "热气漫开时 一筷是暖意入骨",
+      "subtitle": "2020.9.30 | 西安市",
+      "isNew": true,
+      "imageKey": "memory_xian",
+      "linkedFileId": "file_xian_album"
+    },
+    {
+      "id": "mem_ocean",
+      "title": "深蓝漩涡里，沉没成回声",
+      "subtitle": "2014.9.11",
+      "isNew": false,
+      "imageKey": "memory_ocean",
+      "linkedFileId": "file_ocean_album"
+    }
+  ],
+  "aiPrompts": [
+    {
+      "id": "prompt_ocr",
+      "title": "总结 PP-OCRv5_server-onnx 目录结构",
+      "reply": "库库AI已为您扫描「PP-OCRv5_server-onnx」：包含 det_model.onnx、rec_model.onnx 与 config.yaml 共 6 个核心推理文件，总大小 1.28 GB。"
+    },
+    {
+      "id": "prompt_xian",
+      "title": "查找 2020 年西安旅行美食照片",
+      "reply": "已为您匹配回忆影集《热气漫开时 一筷是暖意入骨》（2020.9.30 | 西安市），共找到 28 张高清照片。"
+    },
+    {
+      "id": "prompt_course",
+      "title": "生成 H-黄Z中老师课程合集 听记脑图",
+      "reply": "已从课程录音与讲义中提取 12 章节核心要点，并自动保存至「我的资源/听记摘要」。"
+    }
+  ],
+  "shareGroups": [
+    {
+      "id": "share_ocr_team",
+      "name": "视觉大模型与OCR资源群",
+      "memberCount": 128,
+      "lastMessage": "已共享文件夹：PP-OCRv5_server-onnx",
+      "timeText": "09:40",
+      "unread": 2,
+      "linkedFileId": "file_pp_ocr"
+    },
+    {
+      "id": "share_course_group",
+      "name": "黄老师课程学习交流群",
+      "memberCount": 86,
+      "lastMessage": "群主更新了：H-黄Z中老师课程合集",
+      "timeText": "昨天",
+      "unread": 1,
+      "linkedFileId": "file_course_hz"
+    },
+    {
+      "id": "share_meme_club",
+      "name": "猫meme快乐素材库",
+      "memberCount": 512,
+      "lastMessage": "最新上传：猫meme 表情包图合集",
+      "timeText": "03-24",
+      "unread": 0,
+      "linkedFileId": "file_cat_meme"
+    }
+  ]
+}

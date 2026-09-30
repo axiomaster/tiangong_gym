@@ -1,0 +1,183 @@
+{
+  "user": {
+    "nickname": "多多省钱达人_6688",
+    "pddId": "pdd_harmony_6688",
+    "couponsCount": 8,
+    "followedShopsCount": 14,
+    "footprintsCount": 36,
+    "pxqUpdatesCount": 12
+  },
+  "searchPlaceholders": [
+    "数据线快充超快闪充",
+    "iQOO 15T 5G智能手机",
+    "加厚常规垃圾袋厨房家用"
+  ],
+  "searchDiscover": [
+    "数据线快充超快闪充",
+    "iQOO 15T 5G智能手机",
+    "加厚常规垃圾袋手提",
+    "百亿补贴手机数码",
+    "多多买菜生鲜果蔬",
+    "免费领水果大转盘"
+  ],
+  "products": [
+    {
+      "id": "prod_iqoo15t",
+      "title": "【需当面签收激活】iQOO 15T 5G智能手机 8000mAh蓝海电池",
+      "price": 3729,
+      "priceText": "3729",
+      "pricePrefix": "券后",
+      "originalPriceText": "3879",
+      "promoTag": "限时狂补150元",
+      "salesText": "总售2.1万+件",
+      "shopName": "iQOO官方百亿补贴店",
+      "imageKey": "iqoo15t",
+      "category": "phone",
+      "specs": ["16GB+512GB 赛道黑", "16GB+512GB 传奇白"],
+      "reviewSummary": "续航超强，8000mAh蓝海电池两天一充",
+      "reviewUser": "数码玩家**9",
+      "reviewContent": "顺丰送货上门当面签收激活，全新原封正品！8000mAh蓝海电池续航太顶了，百亿补贴券后3729元真香。"
+    },
+    {
+      "id": "prod_trashbag",
+      "title": "加厚常规垃圾袋厨房家用办公室寝室高颜值粉色手提塑料袋",
+      "price": 0.93,
+      "priceText": "0.93",
+      "pricePrefix": "限1件",
+      "originalPriceText": "5.93",
+      "promoTag": "立减5元",
+      "salesText": "本店已拼46万+件",
+      "shopName": "优选家居日用旗舰店",
+      "imageKey": "trashbag",
+      "category": "department",
+      "specs": ["粉色加厚手提式 5卷装", "粉色加厚手提式 10卷装"],
+      "reviewSummary": "韧性很好不易破，粉色颜值高",
+      "reviewUser": "生活小能手**2",
+      "reviewContent": "0.93元到手真的太划算了！袋子厚实承重力强，手提设计绑口很方便，厨房寝室用都很合适。"
+    },
+    {
+      "id": "prod_subsidy_4099",
+      "title": "【百亿补贴】全新旗舰双芯5G手机 超清潜望长焦 官方正品全国联保",
+      "price": 4099,
+      "priceText": "4099",
+      "pricePrefix": "补贴价",
+      "originalPriceText": "4599",
+      "promoTag": "百亿补贴买贵必赔",
+      "salesText": "总售1.5万+件",
+      "shopName": "百亿补贴数码官方店",
+      "imageKey": "subsidy_item1",
+      "category": "phone",
+      "specs": ["12GB+256GB 星曜黑", "16GB+512GB 冰川蓝"],
+      "reviewSummary": "正品保障，拍照清晰流畅",
+      "reviewUser": "科技控**5",
+      "reviewContent": "官方百亿补贴直降500元，三码合一全新未拆封，拍照和屏幕表现都是一流水准。"
+    },
+    {
+      "id": "prod_subsidy_3039",
+      "title": "【百亿补贴】旗舰轻薄平板电脑12.4英寸高刷护眼屏 学习办公二合一",
+      "price": 3039,
+      "priceText": "3039",
+      "pricePrefix": "券后",
+      "originalPriceText": "3189",
+      "promoTag": "150元券",
+      "salesText": "已拼8500+件",
+      "shopName": "官方数码直营旗舰店",
+      "imageKey": "subsidy_item2",
+      "category": "phone",
+      "specs": ["12GB+256GB 深空灰", "12GB+512GB 皓月银"],
+      "reviewSummary": "大屏看剧记笔记超爽，叠加150元券超值",
+      "reviewUser": "考研党**7",
+      "reviewContent": "领了150元补贴券3039元拿下，屏幕色彩通透，配手写笔写字延迟极低。"
+    },
+    {
+      "id": "prod_subsidy_1549",
+      "title": "【百亿补贴】无线智能降噪头戴式蓝牙耳机 超长续航HiFi音质",
+      "price": 1549,
+      "priceText": "1549",
+      "pricePrefix": "补贴价",
+      "originalPriceText": "1899",
+      "promoTag": "官方直降350元",
+      "salesText": "已拼3.2万+件",
+      "shopName": "声学影音官方旗舰店",
+      "imageKey": "subsidy_item3",
+      "category": "recommend",
+      "specs": ["曜石黑 官方标配", "流光银 官方标配"],
+      "reviewSummary": "降噪深度出色，佩戴柔软不压耳",
+      "reviewUser": "音乐发烧友**1",
+      "reviewContent": "开启主动降噪后地铁通勤瞬间安静，低音澎湃饱满，百亿补贴价格比平时便宜太多。"
+    },
+    {
+      "id": "prod_ddmc_199",
+      "title": "【多多买菜】精选新鲜时令果蔬生鲜次日自提 超值秒杀家庭装",
+      "price": 1.99,
+      "priceText": "1.99",
+      "pricePrefix": "秒杀",
+      "originalPriceText": "5.99",
+      "promoTag": "次日自提",
+      "salesText": "已拼10万+件",
+      "shopName": "多多买菜中心仓",
+      "imageKey": "ddmc_item1",
+      "category": "food",
+      "specs": ["新鲜家庭装 500g", "超值分享装 1000g"],
+      "reviewSummary": "新鲜划算，家门口自提点很方便",
+      "reviewUser": "幸福主妇**3",
+      "reviewContent": "晚上11点前下单第二天一早就能在小区门口拿到，食材特别水灵新鲜，才1.99元！"
+    }
+  ],
+  "initialOrders": [
+    {
+      "productId": "prod_trashbag",
+      "quantity": 1,
+      "spec": "粉色加厚手提式 5卷装",
+      "statusText": "拼单成功 · 待发货"
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat_pxq",
+      "sender": "拼小圈动态通知",
+      "tag": "官方",
+      "preview": "你的3位好友刚刚拼单了【加厚常规垃圾袋厨房家用手提塑料袋】",
+      "timeText": "10:15",
+      "unread": 1
+    },
+    {
+      "id": "chat_iqoo",
+      "sender": "iQOO官方百亿补贴店",
+      "tag": "官方旗舰",
+      "preview": "亲，iQOO 15T 8000mAh蓝海电池正在百亿补贴热销，领150元券后仅需¥3729！",
+      "timeText": "09:42",
+      "unread": 1
+    },
+    {
+      "id": "chat_ddmc",
+      "sender": "多多买菜自提助手",
+      "tag": "买菜",
+      "preview": "今日鲜货已上架：¥1.99时令生鲜限时秒杀，今晚23点前下单次日达",
+      "timeText": "昨天",
+      "unread": 0
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid_iqoo",
+      "author": "阿泽数码实测",
+      "title": "8000mAh蓝海电池到底有多顶？iQOO 15T百亿补贴券后¥3729开箱实测！#百亿补贴 #iQOO15T",
+      "likes": 6280,
+      "liked": false,
+      "followed": false,
+      "linkedProductId": "prod_iqoo15t",
+      "imageKey": "iqoo15t"
+    },
+    {
+      "id": "vid_trashbag",
+      "author": "居家好物评测酱",
+      "title": "0.93元包邮到家的粉色加厚手提垃圾袋！已拼46万+件果然不踩雷 #家居百货 #拼多多好物",
+      "likes": 8940,
+      "liked": true,
+      "followed": true,
+      "linkedProductId": "prod_trashbag",
+      "imageKey": "trashbag"
+    }
+  ]
+}

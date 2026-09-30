@@ -1,0 +1,12 @@
+{
+  "bundle_name": "com.baidu.netdisk.hmos",
+  "page_url": "launcher/Index",
+  "viewport": {
+    "width": 1080.0,
+    "height": 2444.0
+  },
+  "resolution": 3.125,
+  "generated_at": "2026-09-30T01:50:15+00:00",
+  "source": "reference/data/baidunetdisk/pageInfo.json",
+  "assets": 24
+}

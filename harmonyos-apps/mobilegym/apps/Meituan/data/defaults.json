@@ -1,0 +1,216 @@
+{
+  "user": {
+    "nickname": "美团神会员_9527",
+    "mtAccount": "mt_xian_9527",
+    "couponsCount": 8,
+    "redPacketsCount": 5,
+    "followedShopsCount": 14,
+    "footprintsCount": 36
+  },
+  "searchPlaceholders": [
+    "麦当劳",
+    "肯德基",
+    "瑞幸咖啡",
+    "邢老四肉丸胡辣汤"
+  ],
+  "searchDiscover": [
+    "麦当劳",
+    "肯德基",
+    "瑞幸咖啡生椰拿铁",
+    "邢老四肉丸胡辣汤腊牛肉夹馍",
+    "小象超市生鲜",
+    "八达岭长城温泉私汤酒店"
+  ],
+  "deals": [
+    {
+      "id": "deal_hulatang",
+      "title": "邢老四肉丸胡辣汤腊牛肉夹馍 【吃的饱饱的】肉丸胡辣汤大碗+坨坨馍+卤鸡蛋",
+      "shortTitle": "邢老四肉丸胡辣汤腊牛肉夹馍",
+      "subtitle": "【吃的饱饱的】肉丸胡辣汤大碗+坨坨馍+卤鸡蛋",
+      "price": 9.4,
+      "priceText": "9.4",
+      "originalPriceText": "15",
+      "discountText": "180天最低价",
+      "salesText": "季售3000+",
+      "shopName": "邢老四肉丸胡辣汤腊牛肉夹馍(锦业路店)",
+      "badgeType": "特价团",
+      "locationOrDistance": "1.2km",
+      "ratingText": "4.9分",
+      "highlightText": "6折",
+      "imageKey": "hulatang",
+      "category": "food",
+      "specs": ["大碗肉丸胡辣汤+坨坨馍+卤鸡蛋", "小碗胡辣汤+优质腊牛肉夹馍"],
+      "reviewSummary": "配料实在肉丸Q弹，早上吃一碗太满足了",
+      "reviewUser": "西安碳水控**6",
+      "reviewContent": "胡辣汤糊香浓郁，牛肉丸给得特别多，配上刚出炉的脆皮坨坨馍掰进去泡着吃绝了！"
+    },
+    {
+      "id": "deal_luckin",
+      "title": "瑞幸咖啡 【瑞门必喝】生椰拿铁大杯单人饮品券",
+      "shortTitle": "瑞幸咖啡【瑞门必喝】",
+      "subtitle": "生椰拿铁/丝绒拿铁/轻轻茉莉 3选1",
+      "price": 9.99,
+      "priceText": "9.99",
+      "originalPriceText": "20",
+      "discountText": "5折",
+      "salesText": "月售10万+",
+      "shopName": "瑞幸咖啡(华为西安研究所店)",
+      "badgeType": "特价团",
+      "locationOrDistance": "260m",
+      "ratingText": "4.9分",
+      "highlightText": "5折",
+      "imageKey": "luckin",
+      "category": "waimai",
+      "specs": ["大杯 少冰 不另外加糖", "大杯 热 标准糖"],
+      "reviewSummary": "特价团9.99元随时退，打工人续命神器",
+      "reviewUser": "西研所打工人**2",
+      "reviewContent": "就在园区楼下自提超方便，生椰拿铁椰香浓郁，特价团囤券比小程序直接点还便宜。"
+    },
+    {
+      "id": "deal_xiaoxiang",
+      "title": "小象超市(原美团买菜)-雁塔锦业站 生鲜零食百货一站购",
+      "shortTitle": "小象超市(原美团买菜)",
+      "subtitle": "美团自营 生鲜零食百货一站购 最快30分钟送达",
+      "price": 19.9,
+      "priceText": "19.9",
+      "originalPriceText": "29.9",
+      "discountText": "新客0运费",
+      "salesText": "月售63万+",
+      "shopName": "小象超市(雁塔锦业站)",
+      "badgeType": "自营",
+      "locationOrDistance": "最快30分钟",
+      "ratingText": "4.9分",
+      "highlightText": "新客0运费",
+      "imageKey": "xiaoxiang",
+      "category": "xiaoxiang",
+      "specs": ["鲜活基围虾500g+有机生菜", "智利进口蓝莓2盒装"],
+      "reviewSummary": "30分钟极速达，果蔬生鲜非常新鲜",
+      "reviewUser": "锦业路宝妈**8",
+      "reviewContent": "美团自营小象超市太方便了，下班前下单到家刚好送到，新客还免运费，蔬菜水果很水灵。"
+    },
+    {
+      "id": "deal_beifei",
+      "title": "北菲花园·长城温泉私汤度假酒店(八达岭长城店)",
+      "shortTitle": "北菲花园·长城温泉私汤度假酒店(八达岭长城店)",
+      "subtitle": "摩洛哥风情私汤庭院房1晚+双人早餐+长城接驳",
+      "price": 800,
+      "priceText": "800",
+      "priceSuffix": "起",
+      "originalPriceText": "1230",
+      "discountText": "6.5折",
+      "salesText": "已售600+",
+      "shopName": "北菲花园·长城温泉私汤度假酒店",
+      "badgeType": "酒店",
+      "locationOrDistance": "北京延庆区",
+      "ratingText": "4.8分",
+      "highlightText": "低价房仅剩1间",
+      "imageKey": "hotel_beifei",
+      "category": "hotel",
+      "specs": ["云景私汤大床房 含双早", "星空露台私汤庭院房 含双早"],
+      "reviewSummary": "直面八达岭长城云海，私汤温泉拍照超出片",
+      "reviewUser": "旅行玩家**5",
+      "reviewContent": "白色摩洛哥建筑群配上远处的长城日落太震撼了！房间自带独立私汤池，管家服务非常贴心。"
+    },
+    {
+      "id": "deal_tianlun",
+      "title": "北京王府井天伦王朝酒店",
+      "shortTitle": "北京王府井天伦王朝酒店",
+      "subtitle": "王府井步行街核心五星豪华客房+亚太中庭自助早餐",
+      "price": 893,
+      "priceText": "893",
+      "priceSuffix": "起",
+      "originalPriceText": "1120",
+      "discountText": "8折",
+      "salesText": "已售7.3万+",
+      "shopName": "北京王府井天伦王朝酒店",
+      "badgeType": "酒店",
+      "locationOrDistance": "北京东城区",
+      "ratingText": "4.8分",
+      "highlightText": "\"挑空大堂很有特色\"",
+      "imageKey": "hotel_tianlun",
+      "category": "hotel",
+      "specs": ["豪华大床房1晚 无早", "王朝行政双床房1晚 含双早"],
+      "reviewSummary": "挑空大堂很有特色，步行去故宫王府井极近",
+      "reviewUser": "京城漫游**1",
+      "reviewContent": "地理位置无敌，出门就是王府井大街，中庭挑空花园大堂非常气派，老牌五星服务水准在线。"
+    },
+    {
+      "id": "deal_chaoroupian",
+      "title": "宁夏固海旺炒肉片 炒肉片单人餐",
+      "shortTitle": "宁夏固海旺炒肉片 炒肉片单人餐",
+      "subtitle": "招牌手擀面炒肉片大份+秘制小菜+冰峰汽水",
+      "price": 32,
+      "priceText": "32",
+      "originalPriceText": "54",
+      "discountText": "5.9折",
+      "salesText": "半年售500+",
+      "shopName": "宁夏固海旺炒肉片(高新店)",
+      "badgeType": "团购",
+      "locationOrDistance": "9.9km",
+      "ratingText": "95%好评",
+      "highlightText": "回头客160+",
+      "imageKey": "hulatang",
+      "category": "groupon",
+      "specs": ["招牌炒肉片单人餐", "精品羊肉炒面片双人餐"],
+      "reviewSummary": "回头客160+，95%好评，西北风味正宗分量足",
+      "reviewUser": "西北美食家**9",
+      "reviewContent": "正宗宁夏风味炒肉片，面片筋道入味，肉片嫩滑微辣，单人餐分量大得两个人都够吃！"
+    }
+  ],
+  "initialCart": [
+    {
+      "dealId": "deal_hulatang",
+      "quantity": 1,
+      "selected": true,
+      "spec": "大碗肉丸胡辣汤+坨坨馍+卤鸡蛋"
+    },
+    {
+      "dealId": "deal_luckin",
+      "quantity": 2,
+      "selected": true,
+      "spec": "大杯 少冰 不另外加糖"
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid_hulatang",
+      "author": "西安街头碳水探店",
+      "title": "9.4元拿下邢老四肉丸胡辣汤+坨坨馍+卤蛋！180天最低价太香了 #西安美食 #特价团",
+      "likes": 4280,
+      "liked": false,
+      "followed": false,
+      "linkedDealId": "deal_hulatang",
+      "imageKey": "hulatang"
+    },
+    {
+      "id": "vid_beifei",
+      "author": "周末去哪儿住",
+      "title": "在八达岭长城脚下泡私汤看云海！北菲花园度假酒店实拍体验 #温泉私汤 #度假酒店",
+      "likes": 6890,
+      "liked": true,
+      "followed": true,
+      "linkedDealId": "deal_beifei",
+      "imageKey": "hotel_beifei"
+    }
+  ],
+  "xiaotuanTopics": [
+    {
+      "id": "topic_breakfast",
+      "prompt": "推荐西研所附近10元以内的特色早餐",
+      "reply": "为您找到特价团180天最低价：【邢老四肉丸胡辣汤腊牛肉夹馍】大碗胡辣汤+坨坨馍+卤鸡蛋仅需 ¥9.4（6折）！",
+      "recommendedDealId": "deal_hulatang"
+    },
+    {
+      "id": "topic_coffee",
+      "prompt": "想喝生椰拿铁有什么半价团购券？",
+      "reply": "为您匹配【瑞幸咖啡·瑞门必喝】生椰拿铁5折特价团，仅需 ¥9.99，距离华为西安研究所仅 260m！",
+      "recommendedDealId": "deal_luckin"
+    },
+    {
+      "id": "topic_hotel",
+      "prompt": "推荐适合假期泡温泉看长城的度假酒店",
+      "reply": "高分力荐【北菲花园·长城温泉私汤度假酒店(八达岭长城店)】，4.8分好评，¥800起（6.5折），低价房仅剩1间！",
+      "recommendedDealId": "deal_beifei"
+    }
+  ]
+}
