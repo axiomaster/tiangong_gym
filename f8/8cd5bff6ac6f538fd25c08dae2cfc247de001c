@@ -1,0 +1,82 @@
+harmonyos-apps/mobilegym/apps/VMall/images.d.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-24
+harmonyos-apps/mobilegym/apps/VMall/pages/CartPage.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-128
+harmonyos-apps/mobilegym/apps/VMall/pages/MePage.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-129
+harmonyos-apps/mobilegym/apps/VMall/components/VMallNavigationHandler.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-33
+harmonyos-apps/mobilegym/apps/VMall/navigation.declaration.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-299
+harmonyos-apps/mobilegym/apps/VMall/pages/DiscoverPage.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-95
+harmonyos-apps/mobilegym/apps/VMall/VMallApp.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-58
+harmonyos-apps/mobilegym/os/launcher/defaults.json
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-121
+harmonyos-apps/mobilegym/apps/VMall/pages/HomePage.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-287
+AGENTS.md
+  s_7d879d6a6cb371::t_3f1a201f3d12da 32
+  s_7d879d6a6cb371::t_e626ec714245d4 7
+  s_7d879d6a6cb371::t_adbcf6d8b7e20a 58-69
+  s_7d879d6a6cb371::t_c163ef1ef5beba 9
+  s_7d879d6a6cb371::t_cd16000db64fe6 49
+harmonyos-apps/mobilegym/apps/VMall/pages/ProductDetailPage.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-238
+harmonyos-apps/mobilegym/apps/VMall/navigation.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-244
+harmonyos-apps/mobilegym/apps/VMall/navigation.types.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-324
+harmonyos-apps/mobilegym/apps/VMall/hooks/useVMallGestures.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-49
+harmonyos-apps/mobilegym/apps/VMall/components/TabBar.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-83
+harmonyos-apps/mobilegym/apps/VMall/res/icons.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-56
+harmonyos-apps/mobilegym/apps/VMall/pages/CategoryPage.tsx
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-132
+harmonyos-apps/mobilegym/apps/VMall/manifest.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-30
+harmonyos-apps/mobilegym/os/launcher/types.ts
+  s_7d879d6a6cb371::t_2b81dd03dba2cd 1-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.2",
+  "base_commit_sha": "f88cd5bff6ac6f538fd25c08dae2cfc247de001c",
+  "prompts": {},
+  "humans": {
+    "h_de08bd40967a17": {
+      "author": "lishiming <lishiming2@huawei.com>"
+    }
+  },
+  "sessions": {
+    "s_7d879d6a6cb371": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f1286269bffekFLbTXeJ54REsG",
+        "model": "kimi-k3"
+      },
+      "human_author": "lishiming <lishiming2@huawei.com>",
+      "total_additions": 2419,
+      "total_deletions": 4,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_2b81dd03dba2cd": "kimi-k3",
+        "t_32bb8935e59ad7": "kimi-k3",
+        "t_3f1a201f3d12da": "kimi-k3",
+        "t_adbcf6d8b7e20a": "kimi-k3",
+        "t_c163ef1ef5beba": "kimi-k3",
+        "t_cd16000db64fe6": "kimi-k3",
+        "t_e626ec714245d4": "kimi-k3"
+      },
+      "model_totals": {
+        "kimi-k3": {
+          "additions": 2419,
+          "deletions": 4
+        }
+      }
+    }
+  }
+}
