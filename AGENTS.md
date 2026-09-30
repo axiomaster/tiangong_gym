@@ -4,9 +4,9 @@
 
 HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It converts real-device ArkUI page dumps into virtual apps, mass-injects data variants, and cleans the results into a unified `cue_data.json` protocol.
 
-- `docs/arch.md` (Chinese) is the authoritative design spec — read it before writing code. Its §7 tree is labeled `tiangong_gym/` (old project name; this repo is harmonyosgym).
+- `docs/arch.md` (Chinese) is the authoritative design spec — read it before writing code.
 - Python + Pydantic toolchain in `src/` (`schema/`, `collector/`, `cleaner/`, `synthesizer/`, `verifier/`); renderer is no-build vanilla JS.
-- **Progress: M1–M4 all implemented and tested (73 pytest, ruff clean). M3 = `cleaner/gym_cleaner.py` (Playwright DOM scrape → cue_data) + `verifier/` (metrics + diff_engine gates). M4 = `synthesizer/injector.py` (slot templatization → dataset variants → batch collection). Not built yet: list-item replication (增减列表项) and cue schema `functions`/`group` auto-annotation.**
+- **Progress: M1–M4 all implemented and tested (73 pytest, ruff clean). M3 = `cleaner/gym_cleaner.py` (Playwright DOM scrape → cue_data) + `verifier/` (metrics + diff_engine gates). M4 = `synthesizer/injector.py` (slot templatization → dataset variants → batch collection). React path (Path A): VMall app in `reference/mobilegym/apps/VMall/` is fully contract-instrumented (6 routes / 12 transitions / 6 actions, `build_nav_artifacts.mjs` green in schema + data mode), mirrored to `harmonyos-apps/mobilegym/` for commit. Not built yet: list-item replication (增减列表项), cue schema `functions`/`group` auto-annotation, bench_env task suite for VMall.**
 - Real-device closed loop (vmall home) passes ALL verifier gates at 100% (component match / IoU / text / actions). `TabContent` parity rule: empty (inactive) tab panels are excluded on BOTH sides — renderer hides them, device_cleaner skips them.
 
 ## Data direction (do not get backwards)
@@ -29,6 +29,7 @@ HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It 
 - `reference/mobilegym/` — the React mobile-simulator + benchmark project this toolchain feeds into. It has its own strict `AGENTS.md`; read it before touching mobilegym code or emitting apps for its runtime. Data injection mirrors its `data/defaults.json` replacement pattern.
 - `reference/data/` — real-device captures: XHS detail page (root files) and `vmall/` (Huawei Store home).
 - Fresh clones will contain neither.
+- `data/captures/` is likewise gitignored scratch for fresh `hdc_collector` output (same layout as `reference/data/<app>`).
 
 ## Toolchain commands
 
@@ -45,7 +46,7 @@ HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It 
   - `uv run python -m verifier.diff_engine out/cue_data.json out/gym_cue.json --report out/report.json` → exits non-zero on gate failure
 - M4 injection loop:
   - `uv run python -m synthesizer.injector harmonyos-apps/<app> --template out/dataset.template.json` (slot skeleton)
-  - `uv run python -m synthesizer.injector harmonyos-apps/<app> --dataset dataset.json -o harmonyos-apps --collect out/synthetic` → `<app>__vNNN` variant bundles + batch-cleaned synthetic cue files (image paths resolve relative to the dataset file)
+  - `uv run python -m synthesizer.injector harmonyos-apps/<app> --dataset dataset.json -o harmonyos-apps --collect out/synthetic` → `<app>__vNNN` variant bundles + batch-cleaned synthetic cue files (image paths resolve relative to the dataset file). Variant bundles are gitignored (`harmonyos-apps/*__v*`) — only base bundles are committed.
 
 ## `harmonyos-apps/` — generated virtual app bundles (M2, done)
 
@@ -53,6 +54,18 @@ HarmonyOSGym: a data-synthesis pipeline for GUI-agent training on HarmonyOS. It 
 - Root `harmonyos-apps/index.html` is a **launcher** (phone mockups + iframes): serve `harmonyos-apps/` itself (`python -m http.server`), not a bundle dir, to use it. `file://` fetch of spec.json fails — always serve over HTTP.
 - Renderer (`renderSpec(spec, mount)` pure function, physical-px stage, fontSize fp × resolution → px, #AARRGGBB → #RRGGBBAA): nodes are positioned **relative to their parent rect** (scroll containers have their own coordinate space), empty `TabContent` nodes are hidden, and crops whose rect strictly encloses ≥2 Text/Image nodes are skipped by the cropper to avoid ghost duplication. DOM contract for the Gym cleaner: `[data-component-id]`, `[data-node-type]`, `window.__SPEC_RENDERED__`.
 - Browser tests: `uv run pytest tests/test_renderer_integration.py`.
+
+## `harmonyos-apps/mobilegym/` — React (Path A) committed mirror
+
+`reference/mobilegym/` is gitignored, so the VMall React app cannot be committed from there. **Edit and verify in `reference/mobilegym`; commit the mirror in `harmonyos-apps/mobilegym/`** (directory layout mirrors the mobilegym repo 1:1). To update the HarmonyOS virtual app, re-copy these exact paths after editing:
+
+| Edit in `reference/mobilegym/` | Copy to |
+|---|---|
+| `apps/VMall/` (whole app: pages, `navigation.declaration.ts`, gestures hook, assets, `data/`) | `harmonyos-apps/mobilegym/apps/VMall/` |
+| `os/launcher/defaults.json` (pins `vmall` on launcher screen1) | `harmonyos-apps/mobilegym/os/launcher/defaults.json` |
+| `os/launcher/types.ts` (`LAUNCHER_LAYOUT_VERSION` bump) | `harmonyos-apps/mobilegym/os/launcher/types.ts` |
+
+Update loop: edit in `reference/mobilegym` → `node scripts/build_nav_artifacts.mjs VMall --data data/index.ts` must pass with no ERROR/WARN → re-copy the paths above → commit this repo. The generated `public/vmall_*` nav-graph/task artifacts are gitignored on the mobilegym side and are **not** mirrored.
 
 ## Acceptance gates
 
